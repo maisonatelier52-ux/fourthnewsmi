@@ -1,0 +1,110 @@
+[
+  {
+    "category": "business",
+    "title": "Major Tech Firms Announce Joint AI Safety Initiative",
+    "slug": "major-tech-firms-announce-joint-ai-safety-initiative",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    "date": "August. 06, 2026",
+    "shortdescription": "Leading technology companies have formed a new coalition to establish industry-wide standards for the safe development of artificial intelligence.",
+    "description": [
+      {
+        "subtitle": "Unprecedented Collaboration",
+        "text": "The CEOs of top tech giants announced the formation of the AI Safety Alliance, pledging billions of dollars toward research into safe AI deployment, automated safety benchmarks, and transparent model auditing."
+      },
+      {
+        "subtitle": "Regulatory Framework Alignment",
+        "text": "Global policy leaders praised the initiative as a crucial step toward harmonizing cross-border governance for high-stakes autonomous systems while encouraging market innovation."
+      },
+      {
+        "subtitle": "Long-Term Economic Impact",
+        "text": "Market analysts project that standardized safety protocols will accelerate enterprise adoption of autonomous workflows by reducing compliance friction across international jurisdictions."
+      }
+    ],
+    "author": {
+      "name": "Sarah Jenkins",
+      "role": "Business Analyst",
+      "bio": "Sarah covers global markets, corporate governance, and tech business strategies.",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80",
+      "slug": "sarah-jenkins",
+      "email": "sarah.jenkins@wiremingle.com"
+    }
+  },
+  {
+    "category": "business",
+    "title": "Kansas City Has a Massive Array of Big National Companies",
+    "slug": "kansas-city-has-a-massive-array-of-big-national-companies",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=85",
+    "date": "December 14, 2026",
+    "shortdescription": "Corporate expansion in Kansas City accelerates as major enterprise headquarters relocate to the midwest.",
+    "description": [
+      {
+        "subtitle": "Economic Growth Spurt",
+        "text": "Kansas City continues to draw major corporate headquarters across logistics, retail, and financial technology sectors due to strategic geographical advantages and competitive operating costs."
+      },
+      {
+        "subtitle": "Infrastructure Investment",
+        "text": "Recent municipal infrastructure upgrades, including high-speed fiber transit networks and modernized freight hubs, have cemented the region as an attractive destination for Fortune 500 operations."
+      }
+    ],
+    "author": {
+      "name": "Arianna Scott",
+      "role": "Senior Editor",
+      "bio": "Arianna specializes in enterprise growth and regional market shifts.",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
+      "slug": "arianna-scott",
+      "email": "arianna.scott@wiremingle.com"
+    }
+  },
+  {
+    "category": "business",
+    "title": "Global Markets Surge as Innovation Hubs Expand Footprint",
+    "slug": "global-markets-surge-as-innovation-hubs-expand-footprint",
+    "image": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80",
+    "date": "December 14, 2026",
+    "shortdescription": "Financial indexes worldwide posted impressive gains following strong corporate earnings and technology breakthroughs.",
+    "description": [
+      {
+        "subtitle": "Market Dynamics",
+        "text": "Capital flows into clean energy and high-performance computing startups surged past initial quarterly estimates, driving investor optimism across major global stock exchanges."
+      },
+      {
+        "subtitle": "Venture Capital Momentum",
+        "text": "Early-stage venture capital funds report record dry powder deployment, with a heavy emphasis on sustainable grid technologies and next-generation battery architectures."
+      }
+    ],
+    "author": {
+      "name": "Dr. Elena Rostova",
+      "role": "Macroeconomist",
+      "bio": "Elena focuses on global market trends and sovereign funds.",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80",
+      "slug": "elena-rostova",
+      "email": "elena.rostova@wiremingle.com"
+    }
+  },
+  {
+    "category": "business",
+    "title": "Green Energy Investment Reaches Historic Milestone in Q4",
+    "slug": "green-energy-investment-reaches-historic-milestone-in-q4",
+    "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80",
+    "date": "August. 12, 2026",
+    "shortdescription": "Renewable energy infrastructure attracts unprecedented capital from institutional investors worldwide.",
+    "description": [
+      {
+        "subtitle": "Clean Tech Financing",
+        "text": "Institutional allocations toward wind, solar, and grid-scale storage systems crossed $1.2 trillion this fiscal quarter, marking a turning point in global energy transitions."
+      },
+      {
+        "subtitle": "Policy Catalysts",
+        "text": "Government tax incentives and carbon offset mandates in Europe and North America have further spurred corporate capital commitments."
+      }
+    ],
+    "author": {
+      "name": "Sarah Jenkins",
+      "role": "Business Analyst",
+      "bio": "Sarah covers global markets, corporate governance, and tech business strategies.",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80",
+      "slug": "sarah-jenkins",
+      "email": "sarah.jenkins@wiremingle.com"
+    }
+  }
+]

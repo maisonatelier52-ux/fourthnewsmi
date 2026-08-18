@@ -1,0 +1,80 @@
+[
+  {
+    "category": "world",
+    "title": "Autonomous Deep Sea Mapping Expedition Uncovers Uncharted Ecosystems",
+    "slug": "autonomous-deep-sea-mapping-expedition-uncovers-uncharted-ecosystems",
+    "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+    "date": "December 14, 2026",
+    "shortdescription": "Robotic submersibles explore abyssal ocean trenches, discovering biological habitats previously unknown to marine science.",
+    "description": [
+      {
+        "subtitle": "Abyssal Discoveries",
+        "text": "Scientists document thermal vents hosting unique chemosynthetic species across international waters, providing insights into bio-molecular resilience."
+      },
+      {
+        "subtitle": "International Conservation Treaties",
+        "text": "Marine biologists urge the United Nations to declare newly mapped ocean ridges as protected global sanctuaries."
+      }
+    ],
+    "author": {
+      "name": "Marco Silva",
+      "role": "Oceanic Specialist",
+      "bio": "Marco covers deep-sea science, oceanic ecosystems, and environmental policy.",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+      "slug": "marco-silva",
+      "email": "marco.silva@wiremingle.com"
+    }
+  },
+  {
+    "category": "world",
+    "title": "Central Banks Accelerate Sovereign Digital Assets in International Trade",
+    "slug": "central-banks-accelerate-sovereign-digital-assets-in-international-trade",
+    "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=80",
+    "date": "December 14, 2026",
+    "shortdescription": "Cross-border settlement frameworks leverage secure ledger networks to facilitate instant interbank clearance.",
+    "description": [
+      {
+        "subtitle": "Global Finance Transformation",
+        "text": "Interoperable central bank digital currencies reduce cross-border transaction overhead for international trade networks by up to 80%."
+      },
+      {
+        "subtitle": "Sovereignty & Security Standards",
+        "text": "Financial ministers finalize multi-lateral cryptographic agreements to guarantee consumer privacy while preventing illicit financial flows."
+      }
+    ],
+    "author": {
+      "name": "Dr. Elena Rostova",
+      "role": "Macroeconomist",
+      "bio": "Elena focuses on global market trends and sovereign funds.",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80",
+      "slug": "elena-rostova",
+      "email": "elena.rostova@wiremingle.com"
+    }
+  },
+  {
+    "category": "world",
+    "title": "Urban Micro-Forests: How Metropolises Are Beating Rising Summer Heatwaves",
+    "slug": "urban-micro-forests-how-metropolises-are-beating-rising-summer-heatwaves",
+    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80",
+    "date": "December 14, 2026",
+    "shortdescription": "High-density Miyawaki botanical pockets lower ambient urban temperatures while restoring native biodiversity.",
+    "description": [
+      {
+        "subtitle": "Urban Ecology Innovations",
+        "text": "Metropolitan planners across South America and Europe report up to 4°C cooling in dense neighborhoods with strategic canopy coverage."
+      },
+      {
+        "subtitle": "Community Engagement",
+        "text": "Local neighborhood associations participate in planting drives, building urban wildlife corridors and rainwater harvesting reservoirs."
+      }
+    ],
+    "author": {
+      "name": "Sarah Jenkins",
+      "role": "Business Analyst",
+      "bio": "Sarah covers global markets, corporate governance, and tech business strategies.",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80",
+      "slug": "sarah-jenkins",
+      "email": "sarah.jenkins@wiremingle.com"
+    }
+  }
+]

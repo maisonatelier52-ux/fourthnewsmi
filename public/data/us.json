@@ -1,0 +1,80 @@
+[
+  {
+    "category": "us",
+    "title": "Multinational Supply Chains Shift Toward Nearshoring Alliances in North America",
+    "slug": "multinational-supply-chains-shift-toward-nearshoring-alliances",
+    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+    "date": "December 14, 2026",
+    "shortdescription": "Domestic manufacturing hubs across North America see record capital expenditure and infrastructure funding.",
+    "description": [
+      {
+        "subtitle": "Industrial Expansion Across the Midwest",
+        "text": "State governments partner with private energy providers to build resilient transport corridors and regional microgrids."
+      },
+      {
+        "subtitle": "Job Creation & Skilled Trades",
+        "text": "Technical colleges report surge in enrollment for specialized robotics, industrial automation, and green logistics management."
+      }
+    ],
+    "author": {
+      "name": "Sarah Jenkins",
+      "role": "Business Analyst",
+      "bio": "Sarah covers global markets, corporate governance, and tech business strategies.",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80",
+      "slug": "sarah-jenkins",
+      "email": "sarah.jenkins@wiremingle.com"
+    }
+  },
+  {
+    "category": "us",
+    "title": "Customer Engagement Marketing: A New Standard for Retail Franchises",
+    "slug": "customer-engagement-marketing-a-new-standard-for-retail-franchises",
+    "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80",
+    "date": "December 13, 2026",
+    "shortdescription": "Omnichannel loyalty programs drive significant growth in national retail chains.",
+    "description": [
+      {
+        "subtitle": "Franchise Strategies",
+        "text": "Hyper-personalized messaging algorithms boost customer retention across US metropolitan centers while preserving privacy standards."
+      },
+      {
+        "subtitle": "In-Store Technology Integration",
+        "text": "Interactive digital mirrors and frictionless self-checkout kiosks redefine urban shopping experiences across major metropolitan malls."
+      }
+    ],
+    "author": {
+      "name": "Arianna Scott",
+      "role": "Senior Editor",
+      "bio": "Arianna specializes in enterprise growth and regional market shifts.",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
+      "slug": "arianna-scott",
+      "email": "arianna.scott@wiremingle.com"
+    }
+  },
+  {
+    "category": "us",
+    "title": "National Infrastructure Modernization Plan Passes Senate Committee",
+    "slug": "national-infrastructure-modernization-plan-passes-senate-committee",
+    "image": "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?w=800&q=80",
+    "date": "August. 10, 2026",
+    "shortdescription": "Bipartisan legislation unlocks $450B in funding for high-speed rail transit, clean water networks, and smart electric grids.",
+    "description": [
+      {
+        "subtitle": "Transit & Freight Upgrades",
+        "text": "Key interstate corridors will be fitted with autonomous freight lanes and wireless electric vehicle charging highways."
+      },
+      {
+        "subtitle": "Grid Resilience Investments",
+        "text": "Regional utility grids will integrate decentralized battery storage networks to withstand extreme climate occurrences."
+      }
+    ],
+    "author": {
+      "name": "Arianna Scott",
+      "role": "Senior Editor",
+      "bio": "Arianna specializes in enterprise growth and regional market shifts.",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
+      "slug": "arianna-scott",
+      "email": "arianna.scott@wiremingle.com"
+    }
+  }
+]

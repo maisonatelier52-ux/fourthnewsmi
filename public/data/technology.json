@@ -1,0 +1,106 @@
+[
+  {
+    "category": "technology",
+    "title": "Quantum Encryption Breakthroughs Set New Standard for Global Cyber Defense",
+    "slug": "quantum-encryption-breakthroughs-set-new-standard-for-global-cyber-defense",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=85",
+    "date": "December 14, 2026",
+    "shortdescription": "As quantum processors surpass classical supercomputers, global intelligence agencies race to implement post-quantum cryptographic standards.",
+    "description": [
+      {
+        "subtitle": "Post-Quantum Security Era",
+        "text": "Enterprise leaders and cybersecurity researchers are rapidly updating key infrastructure to withstand next-generation lattice algorithms and decryption capabilities."
+      },
+      {
+        "subtitle": "Hardware-Enforced Trust",
+        "text": "New quantum key distribution networks are being deployed across subsea telecommunications cables, guaranteeing physically unhackable channel encryption."
+      }
+    ],
+    "author": {
+      "name": "David Chen",
+      "role": "Cybersecurity Editor",
+      "bio": "David investigates network security, quantum computing, and cryptography.",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
+      "slug": "david-chen",
+      "email": "david.chen@wiremingle.com"
+    }
+  },
+  {
+    "category": "technology",
+    "title": "The Hottest Wearable Tech and Smart Gadgets of the Year Will Amaze You",
+    "slug": "the-hottest-wearable-tech-and-smart-gadgets-of-the-year",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
+    "date": "December 14, 2026",
+    "shortdescription": "Biometric rings, spatial audio glasses, and neural wristwear lead the new wave of consumer electronics.",
+    "description": [
+      {
+        "subtitle": "Next-Gen Consumer Hardware",
+        "text": "Compact multi-sensor integration delivers real-time metabolic feedback, continuous ECG monitoring, and effortless hands-free spatial computing interactions."
+      },
+      {
+        "subtitle": "Seamless Ecosystem Integration",
+        "text": "Developers are introducing unified neural APIs that allow wearable sensors to adjust home ambiance, lighting, and workspace ergonomics automatically."
+      }
+    ],
+    "author": {
+      "name": "Marcus Vance",
+      "role": "Tech Correspondent",
+      "bio": "Marcus reviews consumer hardware and enterprise computing advancements.",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+      "slug": "marcus-vance",
+      "email": "marcus.vance@wiremingle.com"
+    }
+  },
+  {
+    "category": "technology",
+    "title": "Next-Gen Silicon Fabrics Overhaul Enterprise Data Processing",
+    "slug": "next-gen-silicon-fabrics-overhaul-enterprise-data-processing",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80",
+    "date": "December 13, 2026",
+    "shortdescription": "Sub-nanometer architecture unlocks 40% higher efficiency across distributed cloud clusters.",
+    "description": [
+      {
+        "subtitle": "Silicon Architecture Revolution",
+        "text": "Hyperscale cloud providers adopt customized interconnect fabrics to minimize latency and power consumption in continuous model inference."
+      },
+      {
+        "subtitle": "Thermal & Energy Management",
+        "text": "Direct-to-chip liquid cooling systems paired with photonics backplanes enable data centers to scale compute density without overwhelming local power grids."
+      }
+    ],
+    "author": {
+      "name": "Marcus Vance",
+      "role": "Tech Correspondent",
+      "bio": "Marcus reviews consumer hardware and enterprise computing advancements.",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+      "slug": "marcus-vance",
+      "email": "marcus.vance@wiremingle.com"
+    }
+  },
+  {
+    "category": "technology",
+    "title": "Autonomous Neural Interfaces Pass Clinical Human Trials with High Marks",
+    "slug": "autonomous-neural-interfaces-pass-clinical-human-trials",
+    "image": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&q=80",
+    "date": "August. 05, 2026",
+    "shortdescription": "Non-invasive brain-computer chips enable instantaneous digital communication for paralyzed patients.",
+    "description": [
+      {
+        "subtitle": "Medical & Assistive Breakthrough",
+        "text": "Trial participants demonstrated high-speed text generation and digital environment navigation purely through neural intent decoding."
+      },
+      {
+        "subtitle": "Commercialization Timeline",
+        "text": "Regulatory bodies are fast-tracking approval for clinical deployment in neuro-rehabilitation centers starting next spring."
+      }
+    ],
+    "author": {
+      "name": "David Chen",
+      "role": "Cybersecurity Editor",
+      "bio": "David investigates network security, quantum computing, and cryptography.",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
+      "slug": "david-chen",
+      "email": "david.chen@wiremingle.com"
+    }
+  }
+]
