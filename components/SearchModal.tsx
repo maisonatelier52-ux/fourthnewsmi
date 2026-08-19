@@ -66,7 +66,7 @@ export default function SearchModal({ isOpen, onClose, articles }: SearchModalPr
         </div>
 
         {/* Category Pill Filters */}
-        <div className="px-6 py-3 bg-slate-50/70 border-b border-slate-100 flex items-center gap-2 overflow-x-auto">
+        <div className="px-6 py-3 bg-slate-50/70 border-b border-slate-100 flex items-center gap-2 overflow-x-auto no-scrollbar scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 mr-1 shrink-0 flex items-center gap-1">
             <Tag className="w-3 h-3" /> Filter:
           </span>
@@ -86,7 +86,7 @@ export default function SearchModal({ isOpen, onClose, articles }: SearchModalPr
         </div>
 
         {/* Results Body */}
-        <div className="p-6 overflow-y-auto space-y-4 flex-1">
+        <div className="p-6 overflow-y-auto space-y-4 flex-1 no-scrollbar scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {filteredArticles.length > 0 ? (
             filteredArticles.map((art) => (
               <Link

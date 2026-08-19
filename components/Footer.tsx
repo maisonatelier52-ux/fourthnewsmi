@@ -29,8 +29,8 @@ export default function Footer() {
       
       {/* Top Footer Brand Masthead (Matching Header Section Design) */}
       <div className="bg-slate-950 border-b border-slate-800/80">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="w-full md:w-auto text-left">
             <Link href="/" className="inline-block group">
               <span className="font-serif text-3xl sm:text-4xl font-black tracking-tight leading-none text-white">
                 <span className="text-blue-500 group-hover:text-blue-400 transition-colors">Domain</span>
@@ -48,14 +48,14 @@ export default function Footer() {
                 ✓ Subscribed to Daily Briefings!
               </span>
             ) : (
-              <form onSubmit={handleSubmit} className="flex gap-2">
+              <form onSubmit={handleSubmit} className="flex gap-2 w-full">
                 <input
                   type="email"
                   required
                   placeholder="Enter email for daily news..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="px-3.5 py-2 bg-slate-900 border border-slate-800 text-slate-200 text-xs placeholder:text-slate-500 focus:outline-none focus:border-blue-500 min-w-[220px]"
+                  className="flex-1 md:flex-initial px-3.5 py-2 bg-slate-900 border border-slate-800 text-slate-200 text-xs placeholder:text-slate-500 focus:outline-none focus:border-blue-500 min-w-0 md:min-w-[220px]"
                 />
                 <button
                   type="submit"

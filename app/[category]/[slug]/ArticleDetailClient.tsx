@@ -142,9 +142,9 @@ export default function ArticleDetailClient({
       {/* Uniform Container: max-w-6xl mx-auto px-4 sm:px-6 */}
       {/* ========================================================================= */}
       <main className="w-full bg-white py-4 sm:py-6">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-3 sm:space-y-8">
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 items-start">
             
             {/* Left Column (7 Cols): Hero Image */}
             <div className="lg:col-span-7 space-y-2">
@@ -161,7 +161,7 @@ export default function ArticleDetailClient({
             </div>
 
             {/* Right Column (5 Cols): Subtitle & Narrative Paragraphs */}
-            <div className="lg:col-span-5 space-y-4 font-serif">
+            <div className="lg:col-span-5 space-y-2 sm:space-y-4 font-serif">
               {firstSection?.subtitle ? (
                 <h2 className="text-xl sm:text-2xl font-serif font-bold text-slate-950 leading-tight tracking-tight">
                   {firstSection.subtitle}
@@ -177,7 +177,7 @@ export default function ArticleDetailClient({
               </p>
 
               {secondSection && (
-                <div className="space-y-1.5 pt-2 border-t border-slate-100">
+                <div className="space-y-1 sm:space-y-1.5 pt-1.5 sm:pt-2 border-t border-slate-100">
                   {secondSection.subtitle && (
                     <h3 className="text-base font-serif font-bold text-slate-950">
                       {secondSection.subtitle}
@@ -195,14 +195,14 @@ export default function ArticleDetailClient({
           {/* ========================================================================= */}
           {/* 3. CONTINUITY SECTION BELOW THE IMAGE SECTION */}
           {/* ========================================================================= */}
-          <article className="space-y-6 max-w-6xl mx-auto pt-4 font-serif">
+          <article className="space-y-2.5 sm:space-y-6 max-w-6xl mx-auto pt-1 sm:pt-4 font-serif">
             
             {/* Remaining narrative sections */}
             {remainingSections.length > 0 ? (
               remainingSections.map((section, idx) => (
-                <div key={idx} className="space-y-1.5">
+                <div key={idx} className="space-y-1 sm:space-y-1.5">
                   {section.subtitle && (
-                    <h3 className="text-lg sm:text-xl font-serif font-bold text-slate-950 pt-2 tracking-tight">
+                    <h3 className="text-lg sm:text-xl font-serif font-bold text-slate-950 pt-1 sm:pt-2 tracking-tight">
                       {section.subtitle}
                     </h3>
                   )}
@@ -212,7 +212,7 @@ export default function ArticleDetailClient({
                 </div>
               ))
             ) : (
-              <div className="space-y-2">
+              <div className="space-y-1.5 sm:space-y-2">
                 <p className="text-slate-800 leading-snug text-xs sm:text-sm font-normal">
                   Global analysts and field correspondents emphasize that these recent developments reflect broader macroeconomic and socio-political transformations across international markets.
                 </p>
@@ -223,7 +223,7 @@ export default function ArticleDetailClient({
             )}
 
             {/* Section Divider */}
-            <div className="text-center text-slate-300 font-sans text-lg tracking-widest my-4">
+            <div className="text-center text-slate-300 font-sans text-lg tracking-widest my-2 sm:my-4">
               * * *
             </div>
 

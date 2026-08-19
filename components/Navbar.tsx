@@ -60,10 +60,10 @@ export default function Navbar({ articles = [] }: NavbarProps) {
         
         {/* Main Dark Brand Masthead */}
         <div className="bg-slate-950 border-b border-slate-800/60">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 sm:py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-3.5 pb-5 sm:py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3.5 md:gap-4">
             
-            {/* Top Left Date - Perfectly Aligned */}
-            <div className="w-full md:w-1/4 text-center md:text-left text-slate-400 text-xs sm:text-sm font-serif italic">
+            {/* Top Left Date - Small and left-aligned */}
+            <div className="w-full md:w-1/4 text-left text-slate-400 text-[11px] sm:text-xs md:text-sm font-serif italic">
               {currentDate || 'Tuesday, August 18, 2026'}
             </div>
 
