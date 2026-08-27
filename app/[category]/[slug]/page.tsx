@@ -31,7 +31,7 @@ export default async function ArticleDetailPage({ params }: DetailPageProps) {
   const relatedArticles = [...rawRelated, ...fallbackRelated].slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="min-h-screen bg-white text-black flex flex-col font-sans selection:bg-indigo-100 selection:text-indigo-900">
       <Navbar articles={allArticles} />
       <ArticleDetailClient article={article} relatedArticles={relatedArticles} />
       <Footer />

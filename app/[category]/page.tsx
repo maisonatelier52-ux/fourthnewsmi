@@ -46,22 +46,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const timeAgos = ['2h ago', '4h ago', '6h ago', '8h ago', '10h ago'];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-serif selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-white text-neutral-900 flex flex-col font-serif selection:bg-neutral-200 selection:text-neutral-900">
       <Navbar articles={allArticles} />
 
-      <main className="flex-1 max-w-6xl mx-auto px-4 sm:px-6 py-6 w-full space-y-6">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full space-y-6">
         
         {/* ========================================================================= */}
         {/* CATEGORY HEADER BANNER (No Borders, No Icons, Clean Typography) */}
         {/* ========================================================================= */}
-        <div className="pb-3 border-b border-slate-200 space-y-2">
-          <span className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#2563eb] block">
-            CATEGORY DESK • {categoryName.toUpperCase()}
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-slate-900 tracking-tight">
+        <div className="pb-3 border-b border-neutral-200 space-y-2">
+          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-black tracking-tight">
             {categoryName}
           </h1>
-          <p className="text-xs sm:text-sm text-slate-600 font-sans max-w-3xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-neutral-600 font-sans max-w-3xl leading-relaxed">
             {categoryDesc}
           </p>
         </div>
@@ -76,13 +73,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             {featuredArticle && (
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                 {/* Left Photo Container (6 Cols) */}
-                <div className="md:col-span-6 h-[260px] sm:h-[320px] w-full relative overflow-hidden bg-slate-100 group">
+                <div className="md:col-span-6 h-[260px] sm:h-[320px] w-full relative overflow-hidden bg-neutral-100 group">
                   <img
                     src={featuredArticle.image}
                     alt={featuredArticle.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute bottom-3 left-3 bg-[#2563eb] text-white text-[10px] font-sans font-bold uppercase tracking-wider px-2.5 py-1">
+                  <span className="absolute bottom-3 left-3 bg-[#000000] text-white text-[10px] font-sans font-bold uppercase tracking-wider px-2.5 py-1">
                     FEATURED REPORT
                   </span>
                 </div>
@@ -90,36 +87,36 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                 {/* Right Text Details Container (6 Cols) */}
                 <div className="md:col-span-6 flex flex-col justify-between space-y-3 h-full">
                   <div className="space-y-2">
-                    <span className="text-[10px] font-sans font-bold uppercase text-slate-400 block tracking-wider">
+                    <span className="text-[10px] font-sans font-bold uppercase text-neutral-400 block tracking-wider">
                       {categoryName.toUpperCase()} • {featuredArticle.date}
                     </span>
                     <Link
                       href={`/${featuredArticle.category}/${featuredArticle.slug}`}
-                      className="text-slate-900 hover:text-slate-700 font-serif font-bold text-xl sm:text-2xl leading-snug hover:underline block"
+                      className="text-black hover:text-neutral-700 font-serif font-bold text-xl sm:text-2xl leading-snug hover:underline block"
                     >
                       {featuredArticle.title}
                     </Link>
-                    <p className="text-xs text-slate-600 font-sans leading-relaxed line-clamp-3">
+                    <p className="text-xs text-neutral-600 font-sans leading-relaxed line-clamp-3">
                       {featuredArticle.shortdescription}
                     </p>
                   </div>
 
                   <div className="space-y-3 pt-3">
                     <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-full bg-slate-200 overflow-hidden shrink-0">
+                      <div className="w-8 h-8 rounded-full bg-neutral-200 overflow-hidden shrink-0">
                         {featuredArticle.author.image ? (
                           <img src={featuredArticle.author.image} alt={featuredArticle.author.name} className="w-full h-full object-cover" />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center text-slate-500 font-bold text-xs">
+                          <div className="w-full h-full flex items-center justify-center text-neutral-500 font-bold text-xs">
                             {featuredArticle.author.name.charAt(0)}
                           </div>
                         )}
                       </div>
                       <div>
-                        <span className="text-xs font-sans font-semibold text-slate-900 block leading-none">
+                        <span className="text-xs font-sans font-semibold text-black block leading-none">
                           By {featuredArticle.author.name}
                         </span>
-                        <span className="text-[10px] font-sans text-slate-400 block mt-0.5">
+                        <span className="text-[10px] font-sans text-neutral-400 block mt-0.5">
                           {featuredArticle.author.role || 'Senior Correspondent'}
                         </span>
                       </div>
@@ -127,7 +124,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
                     <Link
                       href={`/${featuredArticle.category}/${featuredArticle.slug}`}
-                      className="inline-flex items-center justify-center gap-2 bg-[#2563eb] hover:bg-blue-700 text-white font-sans font-bold text-xs px-5 py-2.5 transition-colors w-fit"
+                      className="inline-flex items-center justify-center gap-2 bg-[#000000] hover:bg-neutral-800 text-white font-sans font-bold text-xs px-5 py-2.5 transition-colors w-fit"
                     >
                       Read Full Story →
                     </Link>
@@ -139,22 +136,22 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
           {/* Right Trending List (4 Cols - Borderless & Iconless) */}
           <div className="lg:col-span-4 bg-white space-y-4">
-            <div className="border-b border-slate-200 pb-2">
-              <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-slate-900">
+            <div className="border-b border-neutral-200 pb-2">
+              <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-black">
                 TRENDING {categoryName.toUpperCase()}
               </h3>
             </div>
 
             <div className="space-y-3.5">
               {trendingArticles.map((art, idx) => (
-                <div key={idx} className="flex gap-3 items-start pb-3 border-b border-slate-100 last:border-0 group">
-                  <span className="text-base font-sans font-extrabold text-[#2563eb] shrink-0 leading-none pt-0.5">
+                <div key={idx} className="flex gap-3 items-start pb-3 border-b border-neutral-100 last:border-0 group">
+                  <span className="text-base font-editorial-serif italic font-bold text-black shrink-0 leading-none pt-0.5">
                     0{idx + 1}
                   </span>
                   <div className="space-y-1">
                     <Link
                       href={`/${art.category}/${art.slug}`}
-                      className="text-slate-900 hover:text-slate-700 font-serif font-bold text-xs sm:text-sm leading-snug line-clamp-2 hover:underline block"
+                      className="text-black hover:text-neutral-700 font-serif font-bold text-xs sm:text-sm leading-snug line-clamp-2 hover:underline block"
                     >
                       {art.title}
                     </Link>
@@ -168,12 +165,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         {/* ========================================================================= */}
         {/* MIDDLE SECTION: MORE STORIES IN CATEGORY (8 COLS) + LATEST NEWS (4 COLS) */}
         {/* ========================================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-4 border-t border-slate-200">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-4 border-t border-neutral-200">
           
           {/* Left More Stories Cards Grid (8 Cols - Borderless & Iconless) */}
           <div className="lg:col-span-8 space-y-4">
-            <div className="border-b border-slate-200 pb-1.5">
-              <h2 className="font-sans text-xs font-bold uppercase tracking-widest text-slate-900">
+            <div className="border-b border-neutral-200 pb-1.5">
+              <h2 className="font-sans text-xs font-bold uppercase tracking-widest text-black">
                 MORE STORIES IN {categoryName.toUpperCase()}
               </h2>
             </div>
@@ -182,7 +179,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               {moreStories.map((art, idx) => (
                 <div key={idx} className="bg-white flex flex-col justify-between group">
                   <div>
-                    <Link href={`/${art.category}/${art.slug}`} className="h-36 w-full overflow-hidden bg-slate-100 block relative">
+                    <Link href={`/${art.category}/${art.slug}`} className="h-36 w-full overflow-hidden bg-neutral-100 block relative">
                       <img
                         src={art.image}
                         alt={art.title}
@@ -190,16 +187,16 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       />
                     </Link>
                     <div className="pt-3 space-y-2">
-                      <span className="text-[9px] font-sans font-bold uppercase text-slate-400 block tracking-wider">
+                      <span className="text-[9px] font-sans font-bold uppercase text-neutral-400 block tracking-wider">
                         {art.category} • {art.date}
                       </span>
                       <Link
                         href={`/${art.category}/${art.slug}`}
-                        className="text-slate-900 hover:text-slate-700 font-serif font-bold text-sm leading-snug line-clamp-2 hover:underline block"
+                        className="text-black hover:text-neutral-700 font-serif font-bold text-sm leading-snug line-clamp-2 hover:underline block"
                       >
                         {art.title}
                       </Link>
-                      <p className="text-xs text-slate-600 font-sans line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-neutral-600 font-sans line-clamp-2 leading-relaxed">
                         {art.shortdescription}
                       </p>
                     </div>
@@ -207,10 +204,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
                   <div className="pt-3 flex items-center justify-between text-xs font-sans">
                     <div className="flex items-center gap-1.5">
-                      <div className="w-5 h-5 rounded-full bg-slate-200 overflow-hidden text-[9px] font-bold text-slate-600 flex items-center justify-center">
+                      <div className="w-5 h-5 rounded-full bg-neutral-200 overflow-hidden text-[9px] font-bold text-neutral-600 flex items-center justify-center">
                         {art.author.name.charAt(0)}
                       </div>
-                      <span className="text-[11px] text-slate-500 font-medium truncate max-w-[120px]">
+                      <span className="text-[11px] text-neutral-500 font-medium truncate max-w-[120px]">
                         By {art.author.name}
                       </span>
                     </div>
@@ -222,21 +219,21 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
           {/* Right Latest News Sidebar (4 Cols - Borderless & Iconless) */}
           <div className="lg:col-span-4 bg-white space-y-4">
-            <div className="border-b border-slate-200 pb-2">
-              <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-slate-900">
+            <div className="border-b border-neutral-200 pb-2">
+              <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-black">
                 LATEST {categoryName.toUpperCase()} NEWS
               </h3>
             </div>
 
             <div className="space-y-4">
               {latestArticles.map((art, idx) => (
-                <div key={idx} className="pb-3 border-b border-slate-100 last:border-0 group">
-                  <span className="text-[10px] font-sans font-semibold text-slate-400 block mb-0.5">
+                <div key={idx} className="pb-3 border-b border-neutral-100 last:border-0 group">
+                  <span className="text-[10px] font-sans font-semibold text-neutral-400 block mb-0.5">
                     {timeAgos[idx % timeAgos.length]}
                   </span>
                   <Link
                     href={`/${art.category}/${art.slug}`}
-                    className="text-slate-900 hover:text-slate-700 font-serif font-bold text-xs sm:text-sm leading-snug line-clamp-2 hover:underline block"
+                    className="text-black hover:text-neutral-700 font-serif font-bold text-xs sm:text-sm leading-snug line-clamp-2 hover:underline block"
                   >
                     {art.title}
                   </Link>
@@ -249,12 +246,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         {/* ========================================================================= */}
         {/* BOTTOM NEWSLETTER SUBSCRIPTION BANNER (Clean Borderless & Iconless) */}
         {/* ========================================================================= */}
-        <div className="bg-slate-100 rounded-lg p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-neutral-100 rounded-lg p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-0.5 max-w-xl">
-            <h4 className="font-serif font-bold text-base sm:text-lg text-slate-900">
+            <h4 className="font-serif font-bold text-base sm:text-lg text-black">
               Stay informed on {categoryName.toLowerCase()} stories that impact you.
             </h4>
-            <p className="font-sans text-xs text-slate-600">
+            <p className="font-sans text-xs text-neutral-600">
               Get the best of {categoryName} news delivered straight to your inbox.
             </p>
           </div>
@@ -263,9 +260,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <input
               type="email"
               placeholder="Enter your email"
-              className="bg-white border border-slate-300 rounded px-4 py-2.5 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-64"
+              className="bg-white border border-neutral-300 rounded px-4 py-2.5 text-xs text-black focus:outline-none focus:ring-2 focus:ring-neutral-900 w-full md:w-64"
             />
-            <button className="bg-[#2563eb] hover:bg-blue-700 text-white font-sans font-bold text-xs px-6 py-2.5 rounded transition-colors shrink-0">
+            <button className="bg-[#000000] hover:bg-neutral-800 text-white font-sans font-bold text-xs px-6 py-2.5 rounded transition-colors shrink-0">
               Subscribe
             </button>
           </div>
