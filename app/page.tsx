@@ -10,31 +10,27 @@ export default async function Home() {
   // Helper filters by category
   const worldArticles = allArticles.filter((a) => a.category === 'world');
   const businessArticles = allArticles.filter((a) => a.category === 'business');
-  const techArticles = allArticles.filter((a) => a.category === 'technology');
-  const entertainmentArticles = allArticles.filter((a) => a.category === 'entertainment');
+  const financeArticles = allArticles.filter((a) => a.category === 'finance');
   const usArticles = allArticles.filter((a) => a.category === 'us');
 
   // NEW MAIN TOP HERO (Left Text Details + Right Large Image)
-  const topMainHero = techArticles[0] || allArticles[0];
+  const topMainHero = financeArticles[0] || allArticles[0];
 
   // Section 2: Hero Split (Large Left Image + 3 Right Stacked Text Cards)
   const heroMain = worldArticles[0] || allArticles[0];
-  const heroRightStack = [...techArticles, ...businessArticles, ...usArticles].slice(0, 3);
+  const heroRightStack = [...financeArticles, ...businessArticles, ...usArticles].slice(0, 3);
 
   // Section 2: Business
   const businessMain = businessArticles[0] || allArticles[1];
   const businessSubList = [...businessArticles.filter(a => a.slug !== businessMain.slug), ...worldArticles].slice(0, 4);
-  const businessSideDigest = [...businessArticles, ...worldArticles, ...techArticles].slice(1, 4);
+  const businessSideDigest = [...businessArticles, ...worldArticles, ...financeArticles].slice(1, 4);
 
-  // Section 3: Tech
-  const techMain = techArticles[0] || allArticles[2];
-  const techGrid = [...techArticles.filter(a => a.slug !== techMain.slug), ...allArticles.filter(a => a.category !== 'technology')].slice(0, 4);
+  // Section 3: Finance
+  const financeMain = financeArticles[0] || allArticles[2];
+  const financeGrid = [...financeArticles.filter(a => a.slug !== financeMain.slug), ...allArticles.filter(a => a.category !== 'finance')].slice(0, 4);
 
   // Section 4: World 4-Column Grid
   const worldGrid = worldArticles.slice(0, 4);
-
-  // Section 5: Entertainment Horizontal Magazine
-  const entertainmentMain = entertainmentArticles[0] || allArticles[3];
 
   // Section 6: US Affairs
   const usMain = usArticles[0] || allArticles[4];
@@ -44,7 +40,7 @@ export default async function Home() {
 
   // Section 8: Executive Chronicles (Sticky Sidebar + Extended 9-Article Grid)
   const sec8Lead = allArticles[0];
-  const sec8LeftGrid = [...allArticles, ...techArticles, ...businessArticles].slice(1, 5); // 4 stories on left
+  const sec8LeftGrid = [...allArticles, ...financeArticles, ...businessArticles].slice(1, 5); // 4 stories on left
   const sec8DigestBox = [...allArticles, ...worldArticles, ...usArticles].slice(5, 9); // 4 stories on right
 
   return (
@@ -277,51 +273,51 @@ export default async function Home() {
 
 
         {/* ========================================================================= */}
-        {/* SECTION 3: TECHNOLOGY & AI FRONTIERS (No Subheader Icons) */}
+        {/* SECTION 3: FINANCE & CAPITAL MARKETS (No Subheader Icons) */}
         {/* ========================================================================= */}
         <section className="space-y-3 sm:space-y-4 pt-3 sm:pt-4 border-t-2 border-neutral-200">
           <div className="flex items-center justify-between border-b border-neutral-200 pb-1">
             <h2 className="font-sans text-xs font-bold uppercase tracking-widest text-neutral-700">
-              TECHNOLOGY & AI FRONTIERS
+              FINANCE & CAPITAL MARKETS
             </h2>
-            <Link href="/technology" className="font-sans text-xs text-neutral-500 font-semibold hover:underline">
-              Explore Tech →
+            <Link href="/finance" className="font-sans text-xs text-neutral-500 font-semibold hover:underline">
+              Explore Finance →
             </Link>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
-            {/* Tech Main Card (7 Cols) */}
-            {techMain && (
+            {/* Finance Main Card (7 Cols) */}
+            {financeMain && (
               <div className="lg:col-span-7 flex flex-col h-full">
                 <div className="relative h-full w-full overflow-hidden bg-[#000000] group flex flex-col justify-end p-5 sm:p-6 min-h-[380px] sm:min-h-[400px]">
                   <img
-                    src={techMain.image}
-                    alt={techMain.title}
+                    src={financeMain.image}
+                    alt={financeMain.title}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-transparent" />
 
                   <div className="relative z-10 space-y-2">
                     <span className="px-3 py-1 bg-black/70 text-white text-[10px] font-sans font-bold uppercase inline-block">
-                      FEATURED TECH REPORT
+                      FEATURED FINANCE REPORT
                     </span>
                     <Link
-                      href={`/${techMain.category}/${techMain.slug}`}
+                      href={`/${financeMain.category}/${financeMain.slug}`}
                       className="text-white hover:text-neutral-200 font-serif font-bold text-xl sm:text-3xl leading-snug block hover:underline"
                     >
-                      {techMain.title}
+                      {financeMain.title}
                     </Link>
                     <p className="text-xs sm:text-sm text-neutral-300 font-sans leading-relaxed line-clamp-3">
-                      {techMain.shortdescription}
+                      {financeMain.shortdescription}
                     </p>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Tech 2x2 Sub-Grid (5 Cols) */}
+            {/* Finance 2x2 Sub-Grid (5 Cols) */}
             <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
-              {techGrid.map((art, idx) => (
+              {financeGrid.map((art, idx) => (
                 <div
                   key={idx}
                   className="relative h-full min-h-[180px] sm:min-h-[190px] w-full overflow-hidden group flex flex-col justify-end p-3.5 bg-[#000000]"
@@ -404,20 +400,20 @@ export default async function Home() {
 
 
         {/* ========================================================================= */}
-        {/* SECTION 5: ENTERTAINMENT & CULTURE (NEW 3-Column Vertical Gallery Layout, No Subheader Icon) */}
+        {/* SECTION 5: FINANCE SPOTLIGHT (3-Column Vertical Gallery Layout) */}
         {/* ========================================================================= */}
         <section className="space-y-3 sm:space-y-4 pt-3 sm:pt-4 border-t-2 border-neutral-200">
           <div className="flex items-center justify-between border-b border-neutral-200 pb-1">
             <h2 className="font-sans text-xs font-bold uppercase tracking-widest text-neutral-700">
-              ENTERTAINMENT & CULTURE
+              FINANCE SPOTLIGHT
             </h2>
-            <Link href="/entertainment" className="font-sans text-xs text-neutral-500 font-semibold hover:underline">
-              View All Culture →
+            <Link href="/finance" className="font-sans text-xs text-neutral-500 font-semibold hover:underline">
+              View All Finance →
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-6">
-            {entertainmentArticles.slice(0, 3).map((art, idx) => (
+            {financeArticles.slice(0, 3).map((art, idx) => (
               <div key={idx} className="space-y-3 group flex flex-col justify-between">
                 <div className="space-y-2">
                   <Link
@@ -431,7 +427,7 @@ export default async function Home() {
                     />
                   </Link>
                   <span className="text-[10px] font-sans font-bold uppercase text-neutral-400 block">
-                    ARTS & CULTURE • {art.date}
+                    MARKETS & MONEY • {art.date}
                   </span>
                   <Link
                     href={`/${art.category}/${art.slug}`}

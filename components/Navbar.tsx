@@ -49,8 +49,7 @@ export default function Navbar({ articles = [] }: NavbarProps) {
     { href: '/', label: 'HOME' },
     { href: '/world', label: 'WORLD' },
     { href: '/business', label: 'BUSINESS' },
-    { href: '/technology', label: 'TECHNOLOGY' },
-    { href: '/entertainment', label: 'ENTERTAINMENT' },
+    { href: '/finance', label: 'FINANCE' },
     { href: '/us', label: 'U.S. NEWS' },
   ];
 

@@ -29,8 +29,7 @@ export interface Article {
 
 export const CATEGORIES = [
   { id: 'business', name: 'Business', description: 'Global markets, corporate ventures, economics & technology strategy' },
-  { id: 'technology', name: 'Technology', description: 'Quantum computing, AI ethics, silicon advancements & cybersecurity' },
-  { id: 'entertainment', name: 'Entertainment', description: 'High fashion, generative cinema, cultural galas & arts criticism' },
+  { id: 'finance', name: 'Finance', description: 'Capital markets, monetary policy, digital assets & sovereign wealth' },
   { id: 'us', name: 'U.S. News', description: 'Domestic policy, infrastructure modernization & national enterprise shifts' },
   { id: 'world', name: 'World', description: 'Deep sea exploration, sovereign assets, climate resilience & diplomacy' },
 ];
@@ -75,7 +74,7 @@ export async function getArticlesByCategory(category: string): Promise<Article[]
  * Load all articles across all categories
  */
 export async function getAllArticles(): Promise<Article[]> {
-  const categoryKeys = ['business', 'technology', 'entertainment', 'us', 'world'];
+  const categoryKeys = ['business', 'finance', 'us', 'world'];
   const allArticlesArrays = await Promise.all(categoryKeys.map(cat => getArticlesByCategory(cat)));
   return allArticlesArrays.flat();
 }

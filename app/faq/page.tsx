@@ -40,19 +40,19 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col font-serif selection:bg-neutral-200 selection:text-black">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-serif selection:bg-slate-200 selection:text-slate-900">
       <Navbar articles={[]} />
 
       {/* Header Banner - Uniform max-w-7xl mx-auto px-4 sm:px-6 */}
-      <header className="w-full bg-[#000000] text-white py-12">
+      <header className="w-full bg-slate-950 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-3">
-          <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
+          <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-[#2563eb]">
             POLICIES • HELP CENTER
           </span>
           <h1 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-white leading-tight">
             Frequently Asked Questions
           </h1>
-          <p className="text-base sm:text-lg font-sans text-neutral-300 max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg font-sans text-slate-300 max-w-3xl leading-relaxed">
             Everything you need to know about Domain Name dispatches, subscriptions, editorial standards, and newsroom access.
           </p>
         </div>
@@ -67,25 +67,25 @@ export default function FAQPage() {
               return (
                 <div
                   key={idx}
-                  className="border border-neutral-200 bg-white transition-colors"
+                  className="border border-slate-200 bg-white transition-colors"
                 >
                   <button
                     onClick={() => toggleFAQ(idx)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-black text-sm sm:text-base hover:text-[#c59b27] transition-colors"
+                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-950 text-sm sm:text-base hover:text-blue-600 transition-colors"
                   >
                     <span className="flex items-center gap-3 font-serif">
-                      <HelpCircle className="w-4 h-4 text-[#c59b27] shrink-0" />
+                      <HelpCircle className="w-4 h-4 text-[#2563eb] shrink-0" />
                       {faq.question}
                     </span>
                     {isOpen ? (
-                      <ChevronUp className="w-4 h-4 text-neutral-500 shrink-0" />
+                      <ChevronUp className="w-4 h-4 text-slate-500 shrink-0" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 text-neutral-400 shrink-0" />
+                      <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />
                     )}
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 pb-5 pt-1 text-neutral-600 text-xs sm:text-sm font-sans leading-relaxed border-t border-neutral-100">
+                    <div className="px-5 pb-5 pt-1 text-slate-600 text-xs sm:text-sm font-sans leading-relaxed border-t border-slate-100">
                       {faq.answer}
                     </div>
                   )}
@@ -94,14 +94,14 @@ export default function FAQPage() {
             })}
           </div>
 
-          <div className="bg-neutral-50 p-6 border border-neutral-200 text-center space-y-2">
-            <h4 className="font-serif font-bold text-black text-base">Have additional questions?</h4>
-            <p className="text-xs text-neutral-600">
+          <div className="bg-slate-50 p-6 border border-slate-200 text-center space-y-2">
+            <h4 className="font-serif font-bold text-slate-900 text-base">Have additional questions?</h4>
+            <p className="text-xs text-slate-600">
               Our reader support desk is available to assist you 24/7.
             </p>
             <a
               href="/contact"
-              className="inline-block bg-[#000000] hover:bg-neutral-800 text-white font-sans font-bold text-xs uppercase tracking-wider px-5 py-2.5 mt-2 transition-colors"
+              className="inline-block bg-slate-900 hover:bg-slate-800 text-white font-sans font-bold text-xs uppercase tracking-wider px-5 py-2.5 mt-2 transition-colors"
             >
               Contact Reader Desk
             </a>

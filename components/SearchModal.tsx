@@ -42,7 +42,7 @@ export default function SearchModal({ isOpen, onClose, articles }: SearchModalPr
     return match && (selectedCategory === 'all' || a.category === selectedCategory);
   });
 
-  const categories = ['all', 'world', 'business', 'technology', 'entertainment', 'us'];
+  const categories = ['all', 'world', 'business', 'finance', 'us'];
   const catLabel = (c: string) =>
     c === 'all' ? 'All' : c === 'us' ? 'Sports' : c.charAt(0).toUpperCase() + c.slice(1);
 
