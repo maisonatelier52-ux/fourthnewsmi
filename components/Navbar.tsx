@@ -113,6 +113,7 @@ export default function Navbar({ articles = [] }: NavbarProps) {
           <div className="flex items-center gap-4">
             <div className="hidden md:flex items-center gap-4 text-neutral-300 font-medium">
               <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
+              <Link href="/team" className="hover:text-white transition-colors">Our Team</Link>
               <Link href="/advertising-and-sponsored-policy" className="hover:text-white transition-colors">Advertise</Link>
               <a href="#footer-newsletter" className="text-[#c59b27] hover:text-[#e0b545] font-semibold transition-colors">
                 Subscribe
@@ -226,6 +227,7 @@ export default function Navbar({ articles = [] }: NavbarProps) {
 
             <div className="pt-3 border-t border-neutral-100 flex items-center justify-between text-xs text-neutral-500 font-sans">
               <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-black">About</Link>
+              <Link href="/team" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-black">Team</Link>
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-black">Contact</Link>
               <Link href="/editorial-policy" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-black">Ethics</Link>
               <Link href="/faq" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-black">FAQ</Link>
@@ -263,7 +265,7 @@ export default function Navbar({ articles = [] }: NavbarProps) {
                   <span className="font-editorial-serif italic text-neutral-800 font-bold text-sm shrink-0">
                     {story.num}
                   </span>
-                  <p className="font-sans text-[12px] text-neutral-800 group-hover:text-[#c59b27] font-medium truncate transition-colors">
+                  <p className="font-sans text-[12px] text-neutral-800 group-hover:text-neutral-950 font-medium truncate transition-colors">
                     {story.text}
                   </p>
                 </Link>

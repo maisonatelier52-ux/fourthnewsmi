@@ -247,7 +247,7 @@ export default function ArticleDetailClient({
                         placeholder="Your Name *"
                         value={newAuthor}
                         onChange={(e) => setNewAuthor(e.target.value)}
-                        className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-none bg-neutral-50 focus:bg-white focus:border-[#c59b27] focus:outline-none"
+                        className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-none bg-neutral-50 focus:bg-white focus:border-neutral-500 focus:outline-none"
                       />
                       <input
                         type="email"
@@ -255,7 +255,7 @@ export default function ArticleDetailClient({
                         placeholder="Your Email Address *"
                         value={newEmail}
                         onChange={(e) => setNewEmail(e.target.value)}
-                        className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-none bg-neutral-50 focus:bg-white focus:border-[#c59b27] focus:outline-none"
+                        className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-none bg-neutral-50 focus:bg-white focus:border-neutral-500 focus:outline-none"
                       />
                     </div>
                     <textarea
@@ -264,7 +264,7 @@ export default function ArticleDetailClient({
                       placeholder="Share your perspective on this report... *"
                       value={newCommentText}
                       onChange={(e) => setNewCommentText(e.target.value)}
-                      className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-none bg-neutral-50 focus:bg-white focus:border-[#c59b27] focus:outline-none"
+                      className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-none bg-neutral-50 focus:bg-white focus:border-neutral-500 focus:outline-none"
                     />
                     <button
                       type="submit"

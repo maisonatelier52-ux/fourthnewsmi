@@ -3,8 +3,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: 'Terms & Conditions | Domain Name Media',
-  description: 'Terms and conditions governing the use of Domain Name website, dispatches, and syndication services.',
+  title: 'Terms & Conditions | Gazetta',
+  description: 'Terms and conditions governing the access, syndication, and use of Gazetta journalism and digital publications.',
 };
 
 export default function TermsPage() {
@@ -12,60 +12,76 @@ export default function TermsPage() {
     <div className="min-h-screen bg-white text-black flex flex-col font-serif selection:bg-neutral-200 selection:text-black">
       <Navbar articles={[]} />
 
-      {/* Header Banner - Uniform max-w-7xl mx-auto px-4 sm:px-6 */}
-      <header className="w-full bg-[#000000] text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-3">
-          <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
-            COMPANY • LEGAL
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-white leading-tight">
-            Terms & Conditions
+      {/* Light Editorial Header - No black banner */}
+      <header className="w-full bg-white text-black pt-8 sm:pt-12 pb-6 border-b border-neutral-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
+          <div className="flex items-center gap-2 text-[11px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
+            <span>COMPANY</span>
+            <span className="text-neutral-300">•</span>
+            <span className="text-neutral-500">LEGAL &amp; COMPLIANCE</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-black leading-tight">
+            Terms &amp; Conditions
           </h1>
-          <p className="text-base sm:text-lg font-sans text-neutral-300 max-w-3xl leading-relaxed">
-            Effective Date: January 1, 2026. Please read these terms carefully before accessing Domain Name dispatches and digital publications.
+          <p className="text-base sm:text-lg font-sans text-neutral-600 leading-relaxed max-w-3xl">
+            The legal agreements and terms of service that govern your relationship with Gazetta dispatches, digital tools, and subscriptions.
           </p>
+          <div className="pt-2 text-xs font-sans text-neutral-400">
+            Effective Date: January 1, 2026 • Gazetta Legal Operations
+          </div>
         </div>
       </header>
 
-      {/* Main Content - Uniform max-w-7xl mx-auto px-4 sm:px-6 */}
-      <main className="w-full flex-1 py-12 font-serif">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
-          <div className="space-y-4 text-neutral-800 text-sm sm:text-base leading-relaxed">
-            <h2 className="text-2xl font-serif font-bold text-black">1. Acceptance of Terms</h2>
-            <p>
-              By accessing or using any part of Domain Name ("Site", "Service", or "Publication"), you agree to be bound by these Terms and Conditions. If you do not agree to all terms, you may not access our editorial services.
+      {/* Main Content */}
+      <main className="w-full flex-1 py-10 sm:py-14 bg-white font-serif">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-10 text-neutral-800 leading-relaxed text-sm sm:text-base">
+          
+          <section className="space-y-3">
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-black border-b border-neutral-200 pb-2">
+              1. Acceptance of Terms
+            </h2>
+            <p className="text-neutral-700">
+              By accessing, browsing, or subscribing to Gazetta (&ldquo;Site&rdquo;, &ldquo;Service&rdquo;, or &ldquo;Publication&rdquo;), you agree to be bound by these Terms and Conditions. If you do not agree with any portion of these provisions, you must immediately discontinue your use of our publications and digital services.
             </p>
+          </section>
 
-            <h2 className="text-2xl font-serif font-bold text-black pt-4">2. Intellectual Property Rights</h2>
-            <p>
-              All original dispatches, investigative reports, photographic assets, charts, data visualizations, and software scripts published on Domain Name are protected under international copyright, trademark, and intellectual property laws.
+          <section className="space-y-3">
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-black border-b border-neutral-200 pb-2">
+              2. Intellectual Property Rights &amp; Copyright
+            </h2>
+            <p className="text-neutral-700">
+              All editorial articles, investigation dispatches, visual journalism, photographs, audio-visual recordings, data visualizations, and proprietary code featured on Gazetta are protected under international copyright, trade secret, and trademark conventions.
             </p>
-            <p>
-              Unauthorized reproduction, scraping, automated text mining, or redistribution without express written syndication agreement is strictly prohibited.
+            <p className="text-neutral-700">
+              Reproduction, scraping, bulk automated ingestion, retraining of artificial intelligence models, or public redistribution without an express written syndication agreement is strictly prohibited and subject to legal enforcement.
             </p>
+          </section>
 
-            <h2 className="text-2xl font-serif font-bold text-black pt-4">3. Permitted Personal Use</h2>
-            <p>
-              Readers are granted a limited, non-exclusive license to view, download for offline reading, and share permalinks for non-commercial personal use, provided all copyright notices remain intact.
+          <section className="space-y-3">
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-black border-b border-neutral-200 pb-2">
+              3. Permitted Personal Use
+            </h2>
+            <p className="text-neutral-700">
+              Readers are granted a revocable, non-exclusive, non-transferable license to view, save individual articles for offline reading, and share permalink citations for non-commercial personal reference, provided proper attribution and original link structures are preserved.
             </p>
+          </section>
 
-            <h2 className="text-2xl font-serif font-bold text-black pt-4">4. User Dispatches & Comments</h2>
-            <p>
-              Comments submitted to reader discussion forums must comply with community guidelines. Domain Name reserves the right to remove, edit, or decline publication of comments containing defamation, hate speech, or commercial spam.
+          <section className="space-y-3">
+            <h2 className="text-xl sm:text-2xl font-serif font-bold text-black border-b border-neutral-200 pb-2">
+              4. Disclaimer of Financial &amp; Legal Guidance
+            </h2>
+            <p className="text-neutral-700">
+              All market intelligence, macroeconomic overviews, and policy analyses provided by Gazetta are produced solely for informational and journalistic purposes. No content published across our platforms constitutes financial, investment, accounting, or legal advice.
             </p>
+          </section>
 
-            <h2 className="text-2xl font-serif font-bold text-black pt-4">5. Disclaimer of Warranties</h2>
-            <p>
-              While Domain Name exercises rigorous fact-checking standards, all material is provided "as is". Market dispatches do not constitute financial, legal, or investment advice.
+          <div className="bg-[#fbf9f4] p-6 border border-neutral-200 border-l-4 border-l-[#c59b27] font-sans text-xs sm:text-sm space-y-2">
+            <h4 className="font-bold text-black uppercase tracking-wider">Syndication &amp; Licensing Rights</h4>
+            <p className="text-neutral-700 leading-relaxed">
+              For corporate subscriptions, educational republication rights, or commercial wire integration, contact our syndication legal bureau at <span className="font-semibold text-black">licensing@gazetta.com</span>.
             </p>
-
-            <div className="bg-neutral-50 p-6 border border-neutral-200 mt-8 font-sans text-xs space-y-2">
-              <h4 className="font-bold text-black uppercase tracking-wider">Syndication & Licensing Inquiries</h4>
-              <p className="text-neutral-600">
-                For corporate republication rights or commercial news feed licensing, contact <span className="font-bold text-black">licensing@domainname.com</span>.
-              </p>
-            </div>
           </div>
+
         </div>
       </main>
 

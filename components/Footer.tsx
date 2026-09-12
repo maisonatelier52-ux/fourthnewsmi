@@ -182,8 +182,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 4-Column Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        {/* Directory Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
 
           {/* Sections */}
           <div>
@@ -198,44 +198,33 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* The Journal */}
+          {/* Company */}
           <div>
             <h4 className="font-sans font-bold text-xs uppercase tracking-[0.15em] text-neutral-950 mb-3">
-              The Journal
+              Company
             </h4>
             <ul className="space-y-2 font-sans text-xs text-neutral-600">
               <li><Link href="/about" className="hover:text-neutral-950 transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-neutral-950 transition-colors">Newsroom Contact</Link></li>
-              <li><Link href="/ownership-and-funding" className="hover:text-neutral-950 transition-colors">Ownership &amp; Funding</Link></li>
-              <li><Link href="/advertising-and-sponsored-policy" className="hover:text-neutral-950 transition-colors">Advertising</Link></li>
+              <li><Link href="/team" className="hover:text-neutral-950 transition-colors">Our Team</Link></li>
+              <li><Link href="/contact" className="hover:text-neutral-950 transition-colors">Contact</Link></li>
+              <li><Link href="/terms-and-conditions" className="hover:text-neutral-950 transition-colors">Terms And Conditions</Link></li>
               <li><Link href="/legal" className="hover:text-neutral-950 transition-colors">Legal</Link></li>
+              <li><Link href="/ownership-and-funding" className="hover:text-neutral-950 transition-colors">Ownership &amp; Funding</Link></li>
+              <li><Link href="/right-of-reply-policy" className="hover:text-neutral-950 transition-colors">Right of Reply Policy</Link></li>
             </ul>
           </div>
 
-          {/* Standards */}
+          {/* Policies */}
           <div>
             <h4 className="font-sans font-bold text-xs uppercase tracking-[0.15em] text-neutral-950 mb-3">
-              Standards
+              Policies
             </h4>
             <ul className="space-y-2 font-sans text-xs text-neutral-600">
-              <li><Link href="/editorial-policy" className="hover:text-neutral-950 transition-colors">Editorial Ethics</Link></li>
-              <li><Link href="/source-methodology" className="hover:text-neutral-950 transition-colors">Source Methodology</Link></li>
-              <li><Link href="/right-of-reply-policy" className="hover:text-neutral-950 transition-colors">Right of Reply</Link></li>
+              <li><Link href="/editorial-policy" className="hover:text-neutral-950 transition-colors">Editorial Policy</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-neutral-950 transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms-and-conditions" className="hover:text-neutral-950 transition-colors">Terms of Service</Link></li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-sans font-bold text-xs uppercase tracking-[0.15em] text-neutral-950 mb-3">
-              Services
-            </h4>
-            <ul className="space-y-2 font-sans text-xs text-neutral-600">
-              <li><Link href="/faq" className="hover:text-neutral-950 transition-colors">Help &amp; FAQ</Link></li>
-              <li><a href="#footer-newsletter" className="hover:text-neutral-950 transition-colors">Newsletters</a></li>
-              <li><Link href="/about" className="hover:text-neutral-950 transition-colors">Archive</Link></li>
-              <li><Link href="/contact" className="hover:text-neutral-950 transition-colors">Press Inquiries</Link></li>
+              <li><Link href="/source-methodology" className="hover:text-neutral-950 transition-colors">Source Methodology</Link></li>
+              <li><Link href="/advertising-and-sponsored-policy" className="hover:text-neutral-950 transition-colors">Advertising &amp; Sponsored Policy</Link></li>
+              <li><Link href="/faq" className="hover:text-neutral-950 transition-colors">Faq</Link></li>
             </ul>
           </div>
 

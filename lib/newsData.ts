@@ -87,3 +87,29 @@ export async function getArticleBySlug(category: string, slug: string): Promise<
   const found = articles.find(art => art.slug.toLowerCase() === slug.toLowerCase());
   return found || null;
 }
+
+/**
+ * Load all unique authors across every category
+ */
+export async function getAllAuthors(): Promise<Author[]> {
+  const articles = await getAllArticles();
+  const seen = new Set<string>();
+  const authors: Author[] = [];
+  for (const article of articles) {
+    if (article.author?.slug && !seen.has(article.author.slug)) {
+      seen.add(article.author.slug);
+      authors.push(article.author);
+    }
+  }
+  return authors;
+}
+
+/**
+ * Load all articles written by a specific author (by slug)
+ */
+export async function getArticlesByAuthor(authorSlug: string): Promise<Article[]> {
+  const articles = await getAllArticles();
+  return articles.filter(
+    (art) => art.author?.slug?.toLowerCase() === authorSlug.toLowerCase()
+  );
+}
