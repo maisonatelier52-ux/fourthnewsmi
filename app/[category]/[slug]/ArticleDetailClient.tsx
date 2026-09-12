@@ -85,7 +85,7 @@ export default function ArticleDetailClient({
       {/* Uniform Container: max-w-7xl mx-auto px-4 sm:px-6 */}
       {/* ========================================================================= */}
       <header className="w-full bg-white text-black pt-6 sm:pt-8 pb-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-4">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
 
           {/* Category Badge & Headline */}
           <div className="space-y-3">
@@ -105,7 +105,7 @@ export default function ArticleDetailClient({
             </h1>
 
             {/* Excerpt */}
-            <p className="text-base sm:text-lg font-sans text-neutral-600 leading-tight font-normal">
+            <p className="text-sm sm:text-[15px] font-sans text-neutral-600 leading-normal font-normal">
               {article.shortdescription}
             </p>
           </div>
@@ -147,13 +147,14 @@ export default function ArticleDetailClient({
       {/* Uniform Container: max-w-7xl mx-auto px-4 sm:px-6 */}
       {/* ========================================================================= */}
       <main className="w-full bg-white py-4 sm:py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-3 sm:space-y-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 items-start">
+          {/* Editorial Content Flow with Floated Hero Image */}
+          <div className="font-serif">
             
-            {/* Left Column (7 Cols): Hero Image */}
-            <div className="lg:col-span-7 space-y-2">
-              <div className="w-full h-[340px] sm:h-[420px] bg-neutral-100 overflow-hidden shadow-sm">
+            {/* Hero Image Floated to Left on Large Screens */}
+            <div className="lg:float-left lg:w-[58%] lg:mr-8 lg:mb-6 space-y-2">
+              <div className="w-full h-[320px] sm:h-[400px] md:h-[440px] bg-neutral-100 overflow-hidden shadow-sm">
                 <img
                   src={article.image}
                   alt={article.title}
@@ -165,8 +166,8 @@ export default function ArticleDetailClient({
               </div>
             </div>
 
-            {/* Right Column (5 Cols): Subtitle & Narrative Paragraphs */}
-            <div className="lg:col-span-5 space-y-2 sm:space-y-4 font-serif">
+            {/* Right Column / Lead Section: Subtitle & Narrative */}
+            <div className="space-y-3">
               {firstSection?.subtitle ? (
                 <h2 className="text-xl sm:text-2xl font-serif font-bold text-black leading-tight tracking-tight">
                   {firstSection.subtitle}
@@ -177,100 +178,52 @@ export default function ArticleDetailClient({
                 </h2>
               )}
 
-              <p className="text-neutral-800 leading-snug text-xs sm:text-sm font-normal">
+              <p className="text-neutral-800 leading-relaxed text-xs sm:text-sm font-normal">
                 {firstSection?.text || article.shortdescription}
               </p>
+            </div>
 
+            {/* Clearfix to clear any float */}
+            <div className="clear-both pt-6"></div>
+
+            {/* ========================================================================= */}
+            {/* 3. CONTINUATION SECTIONS */}
+            {/* ========================================================================= */}
+            <article className="space-y-6 sm:space-y-8 font-serif">
+              
+              {/* Continuation Section 2 */}
               {secondSection && (
-                <div className="space-y-1 sm:space-y-1.5 pt-1.5 sm:pt-2 border-t border-neutral-100">
+                <div className="space-y-2">
                   {secondSection.subtitle && (
-                    <h3 className="text-base font-serif font-bold text-black">
+                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-black tracking-tight leading-snug">
                       {secondSection.subtitle}
                     </h3>
                   )}
-                  <p className="text-neutral-800 leading-snug text-xs sm:text-sm font-normal">
+                  <p className="text-neutral-800 leading-relaxed text-xs sm:text-sm font-normal">
                     {secondSection.text}
                   </p>
                 </div>
               )}
-            </div>
 
-          </div>
-
-          {/* ========================================================================= */}
-          {/* 3. CONTINUITY SECTION BELOW THE IMAGE SECTION */}
-          {/* ========================================================================= */}
-          <article className="space-y-2.5 sm:space-y-6 max-w-6xl mx-auto pt-1 sm:pt-4 font-serif">
-            
-            {/* Remaining narrative sections */}
-            {remainingSections.length > 0 ? (
-              remainingSections.map((section, idx) => (
-                <div key={idx} className="space-y-1 sm:space-y-1.5">
+              {/* Remaining narrative sections */}
+              {remainingSections.map((section, idx) => (
+                <div key={idx} className="space-y-2">
                   {section.subtitle && (
-                    <h3 className="text-lg sm:text-xl font-serif font-bold text-black pt-1 sm:pt-2 tracking-tight">
+                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-black tracking-tight leading-snug">
                       {section.subtitle}
                     </h3>
                   )}
-                  <p className="text-neutral-800 leading-snug text-xs sm:text-sm font-normal">
-                    {section.text} {section.text.endsWith('.') ? '' : '.'} International correspondents and domain experts report that these advancements mark a pivotal shift in modern investigative journalism, providing comprehensive data and structural analysis for policy makers worldwide.
+                  <p className="text-neutral-800 leading-relaxed text-xs sm:text-sm font-normal">
+                    {section.text}
                   </p>
                 </div>
-              ))
-            ) : (
-              <div className="space-y-1.5 sm:space-y-2">
-                <p className="text-neutral-800 leading-snug text-xs sm:text-sm font-normal">
-                  Global analysts and field correspondents emphasize that these recent developments reflect broader macroeconomic and socio-political transformations across international markets.
-                </p>
-                <p className="text-neutral-800 leading-snug text-xs sm:text-sm font-normal">
-                  Key industry leaders and institutional stakeholders continue to evaluate the long-term strategic implications as new data emerges.
-                </p>
-              </div>
-            )}
+              ))}
 
             {/* Section Divider */}
             <div className="text-center text-neutral-300 font-sans text-lg tracking-widest my-2 sm:my-4">
               * * *
             </div>
 
-            {/* ========================================================================= */}
-            {/* NEW NEWSLETTER SUBSCRIPTION BOX (Replaces Author Box) */}
-            {/* ========================================================================= */}
-            <div className="bg-[#000000] text-white p-6 sm:p-8 space-y-4 font-sans border-t-2 border-[#c59b27]">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div className="space-y-1 max-w-md">
-                  <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-[#c59b27] block">
-                    DAILY EDITORIAL BRIEFING
-                  </span>
-                  <h4 className="text-xl font-serif font-bold text-white">Stay Ahead with Domain Name</h4>
-                  <p className="text-xs text-neutral-300 leading-relaxed">
-                    Get independent global reporting, morning dispatches, and contemporary analysis sent straight to your inbox daily.
-                  </p>
-                </div>
-
-                {isSubscribed ? (
-                  <div className="flex items-center gap-2 bg-blue-600/20 text-neutral-300 border border-[#c59b27]/40 px-4 py-3 text-xs font-bold font-sans shrink-0">
-                    <CheckCircle className="w-4 h-4 text-[#c59b27]" /> Thank you for subscribing!
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 shrink-0 w-full md:w-auto">
-                    <input
-                      type="email"
-                      required
-                      placeholder="Enter email address..."
-                      value={newsletterEmail}
-                      onChange={(e) => setNewsletterEmail(e.target.value)}
-                      className="px-3.5 py-2.5 bg-[#000000] border border-neutral-700 text-white text-xs placeholder:text-neutral-500 focus:outline-none focus:border-[#c59b27] min-w-[220px]"
-                    />
-                    <button
-                      type="submit"
-                      className="bg-[#000000] hover:bg-neutral-800 text-white font-sans font-bold text-xs px-5 py-2.5 transition-colors shrink-0 flex items-center justify-center gap-1.5"
-                    >
-                      <Send className="w-3.5 h-3.5" /> Subscribe
-                    </button>
-                  </form>
-                )}
-              </div>
-            </div>
 
             {/* ========================================================================= */}
             {/* INTERACTIVE COMMENT FORM */}
@@ -326,6 +279,7 @@ export default function ArticleDetailClient({
 
           </article>
 
+          </div>
         </div>
       </main>
 
@@ -348,7 +302,7 @@ export default function ArticleDetailClient({
                   href={`/${rel.category}/${rel.slug}`}
                   className="group space-y-2.5 block transition-all"
                 >
-                  <div className="h-36 w-full overflow-hidden bg-neutral-100 relative">
+                  <div className="h-48 sm:h-52 md:h-56 w-full overflow-hidden bg-neutral-100 relative">
                     <img
                       src={rel.image}
                       alt={rel.title}

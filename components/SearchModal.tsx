@@ -44,7 +44,7 @@ export default function SearchModal({ isOpen, onClose, articles }: SearchModalPr
 
   const categories = ['all', 'world', 'business', 'finance', 'us'];
   const catLabel = (c: string) =>
-    c === 'all' ? 'All' : c === 'us' ? 'Sports' : c.charAt(0).toUpperCase() + c.slice(1);
+    c === 'all' ? 'All' : c === 'us' ? 'U.S. News' : c.charAt(0).toUpperCase() + c.slice(1);
 
   return (
     <div

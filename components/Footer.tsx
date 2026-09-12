@@ -17,7 +17,7 @@ export default function Footer() {
   };
 
   return (
-    <footer id="footer-newsletter" className="w-full bg-white mt-16 font-sans text-sm text-neutral-900">
+    <footer id="footer-newsletter" className="w-full bg-white mt-4 sm:mt-6 font-sans text-sm text-neutral-900">
 
       {/* ================================================================= */}
       {/* 1. NEWSLETTER SECTION ─ Bounded Strictly within Content Container */}
@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="border-t border-neutral-200" />
         </div>
 
-        <div className="bg-neutral-50/60 border border-neutral-200/90 p-6 sm:p-10 lg:p-12 my-6">
+        <div className="bg-neutral-50/60 border border-neutral-200/90 p-5 sm:p-8 lg:p-10 my-3 sm:my-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
             {/* Left: Editorial Messaging */}

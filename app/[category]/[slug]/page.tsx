@@ -24,11 +24,9 @@ export default async function ArticleDetailPage({ params }: DetailPageProps) {
     notFound();
   }
 
-  // Fetch related articles in same category with fallback to ensure 3 full stories
+  // Fetch related articles strictly from the same category's JSON file
   const categoryArticles = await getArticlesByCategory(category);
-  const rawRelated = categoryArticles.filter((a) => a.slug !== article.slug);
-  const fallbackRelated = allArticles.filter((a) => a.slug !== article.slug && !rawRelated.some((r) => r.slug === a.slug));
-  const relatedArticles = [...rawRelated, ...fallbackRelated].slice(0, 3);
+  const relatedArticles = categoryArticles.filter((a) => a.slug !== article.slug).slice(0, 3);
 
   return (
     <div className="min-h-screen bg-white text-black flex flex-col font-sans selection:bg-indigo-100 selection:text-indigo-900">

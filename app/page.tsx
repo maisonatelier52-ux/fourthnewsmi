@@ -13,42 +13,43 @@ export default async function Home() {
   const financeArticles = allArticles.filter((a) => a.category === 'finance');
   const usArticles = allArticles.filter((a) => a.category === 'us');
 
-  // NEW MAIN TOP HERO (Left Text Details + Right Large Image)
+  // SECTION 1: TOP MAIN HERO (Finance 1/7)
   const topMainHero = financeArticles[0] || allArticles[0];
 
-  // Section 2: Hero Split (Large Left Image + 3 Right Stacked Text Cards)
+  // SECTION 2: HERO SHOWCASE (World 1/11, Business 1/7, US 1/8, Finance 2/7)
   const heroMain = worldArticles[0] || allArticles[0];
-  const heroRightStack = [...financeArticles, ...businessArticles, ...usArticles].slice(0, 3);
+  const heroRightStack = [businessArticles[0], usArticles[0], financeArticles[1]].filter(Boolean);
 
-  // Section 2: Business
-  const businessMain = businessArticles[0] || allArticles[1];
-  const businessSubList = [...businessArticles.filter(a => a.slug !== businessMain.slug), ...worldArticles].slice(0, 4);
-  const businessSideDigest = [...businessArticles, ...worldArticles, ...financeArticles].slice(1, 4);
+  // SECTION 2: BUSINESS (Business 2..7/7 -> ALL 6 remaining business articles)
+  const businessMain = businessArticles[1];
+  const businessSubList = businessArticles.slice(2, 5);
+  const businessSideDigest = businessArticles.slice(5, 7);
 
-  // Section 3: Finance
-  const financeMain = financeArticles[0] || allArticles[2];
-  const financeGrid = [...financeArticles.filter(a => a.slug !== financeMain.slug), ...allArticles.filter(a => a.category !== 'finance')].slice(0, 4);
+  // SECTION 3: FINANCE (Finance 3..7/7 -> ALL 5 remaining finance articles)
+  const financeMain = financeArticles[2];
+  const financeGrid = financeArticles.slice(3, 7);
 
-  // Section 4: World 4-Column Grid
-  const worldGrid = worldArticles.slice(0, 4);
+  // SECTION 4: WORLD (World 2..5/11 -> 4 world articles)
+  const worldGrid = worldArticles.slice(1, 5);
 
-  // Section 6: US Affairs
-  const usMain = usArticles[0] || allArticles[4];
+  // SECTION 6: U.S. AFFAIRS (US 2..4/8 -> 3 US articles: 1 main lead + 2 right-side items)
+  const usMain = usArticles[1];
+  const usSubList = usArticles.slice(2, 4);
 
-  // Section 7: Special Reports (2-Column Split Feature Grid)
-  const section7Articles = [...allArticles.slice(1), ...allArticles].slice(0, 4);
+  // SECTION 7: SPECIAL REPORTS (World 6..7/11, US 6..7/8 -> 4 articles)
+  const section7Articles = [worldArticles[5], usArticles[5], worldArticles[6], usArticles[6]].filter(Boolean);
 
-  // Section 8: Executive Chronicles (Sticky Sidebar + Extended 9-Article Grid)
-  const sec8Lead = allArticles[0];
-  const sec8LeftGrid = [...allArticles, ...financeArticles, ...businessArticles].slice(1, 5); // 4 stories on left
-  const sec8DigestBox = [...allArticles, ...worldArticles, ...usArticles].slice(5, 9); // 4 stories on right
+  // SECTION 8: EXECUTIVE CHRONICLES (World 8..11/11, US 5/8, US 8/8 -> ALL remaining 6 articles balanced)
+  const sec8Lead = worldArticles[7];
+  const sec8LeftGrid = [worldArticles[8], usArticles[4]].filter(Boolean);
+  const sec8DigestBox = [usArticles[7], worldArticles[9], worldArticles[10]].filter(Boolean);
 
   return (
     <div className="min-h-screen bg-white text-black flex flex-col font-serif selection:bg-neutral-200 selection:text-black">
       {/* Navigation Header with "Domain Name" logo */}
       <Navbar articles={allArticles} />
 
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 pt-7 sm:pt-10 pb-6 sm:pb-8 w-full space-y-6 sm:space-y-10 lg:space-y-12">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-2 w-full space-y-4 sm:space-y-6 lg:space-y-8">
         
         {/* ========================================================================= */}
         {/* SECTION 1: MAIN TOP HERO (Left Text Details + Right Large Image) */}
@@ -400,56 +401,7 @@ export default async function Home() {
 
 
         {/* ========================================================================= */}
-        {/* SECTION 5: FINANCE SPOTLIGHT (3-Column Vertical Gallery Layout) */}
-        {/* ========================================================================= */}
-        <section className="space-y-3 sm:space-y-4 pt-3 sm:pt-4 border-t-2 border-neutral-200">
-          <div className="flex items-center justify-between border-b border-neutral-200 pb-1">
-            <h2 className="font-sans text-xs font-bold uppercase tracking-widest text-neutral-700">
-              FINANCE SPOTLIGHT
-            </h2>
-            <Link href="/finance" className="font-sans text-xs text-neutral-500 font-semibold hover:underline">
-              View All Finance →
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-6">
-            {financeArticles.slice(0, 3).map((art, idx) => (
-              <div key={idx} className="space-y-3 group flex flex-col justify-between">
-                <div className="space-y-2">
-                  <Link
-                    href={`/${art.category}/${art.slug}`}
-                    className="h-48 w-full overflow-hidden bg-neutral-100 block"
-                  >
-                    <img
-                      src={art.image}
-                      alt={art.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </Link>
-                  <span className="text-[10px] font-sans font-bold uppercase text-neutral-400 block">
-                    MARKETS & MONEY • {art.date}
-                  </span>
-                  <Link
-                    href={`/${art.category}/${art.slug}`}
-                    className="text-black hover:text-neutral-700 font-serif font-bold text-lg leading-snug hover:underline block"
-                  >
-                    {art.title}
-                  </Link>
-                  <p className="text-xs text-neutral-600 font-sans line-clamp-2 leading-relaxed">
-                    {art.shortdescription}
-                  </p>
-                </div>
-                <span className="text-[11px] text-neutral-400 font-sans block pt-2 border-t border-neutral-100">
-                  By {art.author.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-
-        {/* ========================================================================= */}
-        {/* SECTION 6: U.S. AFFAIRS & NATIONAL POLICY (NEW Split Horizontal Showcase Layout, No Subheader Icon) */}
+        {/* SECTION 5: U.S. AFFAIRS & NATIONAL POLICY (Split Horizontal Showcase Layout, No Subheader Icon) */}
         {/* ========================================================================= */}
         <section className="space-y-3 sm:space-y-4 pt-3 sm:pt-4 border-t-2 border-neutral-200">
           <div className="flex items-center justify-between border-b border-neutral-200 pb-1">
@@ -495,9 +447,9 @@ export default async function Home() {
               </div>
             )}
 
-            {/* Right Sub-List with 2 horizontal policy items */}
+            {/* Right Sub-List with 3 horizontal policy items */}
             <div className="lg:col-span-5 space-y-4">
-              {usArticles.slice(1, 3).map((art, idx) => (
+              {usSubList.map((art, idx) => (
                 <div key={idx} className="pb-3 border-b border-neutral-100 space-y-1.5 group">
                   <span className="text-[10px] font-sans font-bold uppercase text-neutral-400 block">
                     CAPITOL DISPATCH • {art.date}
@@ -674,11 +626,6 @@ export default async function Home() {
                     </span>
                   </div>
                 ))}
-              </div>
-
-              <div className="pt-3 border-t border-neutral-300 text-xs font-sans text-neutral-600">
-                <span className="font-bold text-black block text-[10px] uppercase">Editorial Archive</span>
-                <p className="text-[11px] italic">Curated weekly by senior editors & policy analysts.</p>
               </div>
             </div>
           </div>

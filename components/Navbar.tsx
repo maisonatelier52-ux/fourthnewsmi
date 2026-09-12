@@ -11,12 +11,31 @@ interface NavbarProps {
   articles?: Article[];
 }
 
-const TRENDING_STORIES = [
-  { num: '01', text: 'Global Markets Rally as Inflation Cools' },
-  { num: '02', text: 'New Climate Pact Targets 2035 Emissions Cut' },
-  { num: '03', text: 'Supreme Court Weighs Landmark Voting Rights Case' },
-  { num: '04', text: 'Tech Giants Face Landmark Antitrust Regulation in Europe' },
-  { num: '05', text: 'Breakthrough Fusion Experiment Exceeds Net Energy Milestone' },
+const DEFAULT_TRENDING = [
+  {
+    num: '01',
+    category: 'world',
+    text: 'The US Has Made Progress in Reopening the Strait of Hormuz, but the Iran War Is Far from Over',
+    href: '/world/us-progress-reopening-strait-of-hormuz-iran-war-far-from-over',
+  },
+  {
+    num: '02',
+    category: 'business',
+    text: 'US Diesel Prices Soar Past $6 a Gallon, Deepening Strain for Hauling Everyday Goods',
+    href: '/business/us-diesel-prices-soar-past-6-dollar-gallon-hauling-everyday-goods',
+  },
+  {
+    num: '03',
+    category: 'finance',
+    text: 'US Futures Up, Oil Prices Down Ahead of One of the More Crucial Reads on Inflation in Years',
+    href: '/finance/us-futures-up-oil-prices-down-crucial-inflation-read-finance',
+  },
+  {
+    num: '04',
+    category: 'us',
+    text: 'Trial Remains Elusive for Purported Mastermind Accused of Plotting 9/11 Attacks',
+    href: '/us/trial-remains-elusive-911-mastermind-khalid-sheikh-mohammed',
+  },
 ];
 
 export default function Navbar({ articles = [] }: NavbarProps) {
@@ -53,8 +72,23 @@ export default function Navbar({ articles = [] }: NavbarProps) {
     { href: '/us', label: 'U.S. NEWS' },
   ];
 
+  // Get the first article from each category: world, business, finance, us
+  const categories = ['world', 'business', 'finance', 'us'];
+  const trendingStories = categories.map((cat, idx) => {
+    const art = articles.find((a) => a.category?.toLowerCase() === cat);
+    if (art) {
+      return {
+        num: `0${idx + 1}`,
+        category: art.category,
+        text: art.title,
+        href: `/${art.category}/${art.slug}`,
+      };
+    }
+    return DEFAULT_TRENDING[idx];
+  });
+
   const visibleStories = [0, 1, 2].map(
-    (offset) => TRENDING_STORIES[(trendIndex + offset) % TRENDING_STORIES.length]
+    (offset) => trendingStories[(trendIndex + offset) % trendingStories.length]
   );
 
   return (
@@ -80,7 +114,6 @@ export default function Navbar({ articles = [] }: NavbarProps) {
             <div className="hidden md:flex items-center gap-4 text-neutral-300 font-medium">
               <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
               <Link href="/advertising-and-sponsored-policy" className="hover:text-white transition-colors">Advertise</Link>
-              <Link href="/contact" className="hover:text-white transition-colors">Newsletter</Link>
               <a href="#footer-newsletter" className="text-[#c59b27] hover:text-[#e0b545] font-semibold transition-colors">
                 Subscribe
               </a>
@@ -172,15 +205,6 @@ export default function Navbar({ articles = [] }: NavbarProps) {
               })}
             </div>
 
-            {/* Solid Black NEWSLETTER Button */}
-            <a
-              href="#footer-newsletter"
-              className="hidden sm:flex items-center gap-2 bg-[#000000] text-white hover:bg-neutral-800 transition-colors px-3.5 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-widest shrink-0 ml-3"
-            >
-              <span>NEWSLETTER</span>
-              <Mail className="w-3.5 h-3.5" />
-            </a>
-
           </div>
         </nav>
 
@@ -229,8 +253,9 @@ export default function Navbar({ articles = [] }: NavbarProps) {
           <div className="flex-1 flex items-center overflow-hidden px-4 sm:px-6">
             <div className="w-full flex items-center justify-between divide-x divide-neutral-200">
               {visibleStories.map((story, i) => (
-                <div
-                  key={story.num}
+                <Link
+                  key={story.num + story.text}
+                  href={story.href}
                   className={`flex items-center gap-3 px-4 flex-1 min-w-0 cursor-pointer group ${
                     i === 0 ? 'pl-0' : ''
                   } ${i > 0 ? 'hidden md:flex' : 'flex'}`}
@@ -238,10 +263,10 @@ export default function Navbar({ articles = [] }: NavbarProps) {
                   <span className="font-editorial-serif italic text-neutral-800 font-bold text-sm shrink-0">
                     {story.num}
                   </span>
-                  <p className="font-sans text-[12px] text-neutral-800 group-hover:text-neutral-600 font-medium truncate cursor-pointer transition-colors">
+                  <p className="font-sans text-[12px] text-neutral-800 group-hover:text-[#c59b27] font-medium truncate transition-colors">
                     {story.text}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -249,14 +274,14 @@ export default function Navbar({ articles = [] }: NavbarProps) {
           {/* Previous / Next Arrow Controls (Flush Right) */}
           <div className="flex items-center gap-1.5 pl-3 border-l border-neutral-200 shrink-0">
             <button
-              onClick={() => setTrendIndex((prev) => (prev - 1 + TRENDING_STORIES.length) % TRENDING_STORIES.length)}
+              onClick={() => setTrendIndex((prev) => (prev - 1 + trendingStories.length) % trendingStories.length)}
               className="w-7 h-7 border border-neutral-300 flex items-center justify-center text-neutral-700 hover:bg-neutral-100 transition-colors cursor-pointer"
               aria-label="Previous story"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
-              onClick={() => setTrendIndex((prev) => (prev + 1) % TRENDING_STORIES.length)}
+              onClick={() => setTrendIndex((prev) => (prev + 1) % trendingStories.length)}
               className="w-7 h-7 border border-neutral-300 flex items-center justify-center text-neutral-700 hover:bg-neutral-100 transition-colors cursor-pointer"
               aria-label="Next story"
             >

@@ -28,22 +28,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     ? categoryInfo.description
     : `In-depth reporting on global affairs, international relations, climate, conflict, diplomacy and the stories that shape our planet.`;
 
-  const featuredArticle = articles.length > 0 ? articles[0] : allArticles[0];
+  const featuredArticle = articles.length > 0 ? articles[0] : null;
 
-  // Fill moreStories to always have 6 full articles across 2 rows of 3 columns
-  const rawMore = articles.filter(a => a.slug !== featuredArticle?.slug);
-  const fallbackMore = allArticles.filter(a => a.slug !== featuredArticle?.slug && !rawMore.some(m => m.slug === a.slug));
-  const moreStories = [...rawMore, ...fallbackMore].slice(0, 6);
+  // Trending articles strictly from this category (items 2 to 4, no repetition of featured)
+  const trendingArticles = articles.slice(1, 4);
 
-  // Fill trendingArticles to always have 5 full items
-  const rawTrending = articles.slice(0, 5);
-  const fallbackTrending = allArticles.filter(a => !rawTrending.some(t => t.slug === a.slug));
-  const trendingArticles = [...rawTrending, ...fallbackTrending].slice(0, 5);
-
-  // Fill latestArticles to always have 6 full items
-  const latestArticles = [...allArticles].reverse().slice(0, 6);
-
-  const timeAgos = ['2h ago', '4h ago', '6h ago', '8h ago', '10h ago'];
+  // All remaining articles strictly from this category (from item 5 onwards, no repetition)
+  const moreStories = articles.slice(4);
 
   return (
     <div className="min-h-screen bg-white text-neutral-900 flex flex-col font-serif selection:bg-neutral-200 selection:text-neutral-900">
@@ -163,23 +154,21 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         </div>
 
         {/* ========================================================================= */}
-        {/* MIDDLE SECTION: MORE STORIES IN CATEGORY (8 COLS) + LATEST NEWS (4 COLS) */}
+        {/* MIDDLE SECTION: MORE STORIES IN CATEGORY (All Remaining Unique Articles) */}
         {/* ========================================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-4 border-t border-neutral-200">
-          
-          {/* Left More Stories Cards Grid (8 Cols - Borderless & Iconless) */}
-          <div className="lg:col-span-8 space-y-4">
+        {moreStories.length > 0 && (
+          <div className="space-y-4 pt-4 border-t border-neutral-200">
             <div className="border-b border-neutral-200 pb-1.5">
               <h2 className="font-sans text-xs font-bold uppercase tracking-widest text-black">
                 MORE STORIES IN {categoryName.toUpperCase()}
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {moreStories.map((art, idx) => (
                 <div key={idx} className="bg-white flex flex-col justify-between group">
                   <div>
-                    <Link href={`/${art.category}/${art.slug}`} className="h-36 w-full overflow-hidden bg-neutral-100 block relative">
+                    <Link href={`/${art.category}/${art.slug}`} className="h-44 w-full overflow-hidden bg-neutral-100 block relative">
                       <img
                         src={art.image}
                         alt={art.title}
@@ -187,12 +176,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       />
                     </Link>
                     <div className="pt-3 space-y-2">
-                      <span className="text-[9px] font-sans font-bold uppercase text-neutral-400 block tracking-wider">
-                        {art.category} • {art.date}
+                      <span className="text-[10px] font-sans font-bold uppercase text-neutral-400 block tracking-wider">
+                        {categoryName.toUpperCase()} • {art.date}
                       </span>
                       <Link
                         href={`/${art.category}/${art.slug}`}
-                        className="text-black hover:text-neutral-700 font-serif font-bold text-sm leading-snug line-clamp-2 hover:underline block"
+                        className="text-black hover:text-neutral-700 font-serif font-bold text-base leading-snug hover:underline block"
                       >
                         {art.title}
                       </Link>
@@ -202,71 +191,28 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     </div>
                   </div>
 
-                  <div className="pt-3 flex items-center justify-between text-xs font-sans">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-5 h-5 rounded-full bg-neutral-200 overflow-hidden text-[9px] font-bold text-neutral-600 flex items-center justify-center">
-                        {art.author.name.charAt(0)}
+                  <div className="pt-3 border-t border-neutral-100 mt-3 flex items-center justify-between text-xs font-sans">
+                    <div className="flex items-center gap-2">
+                      <div className="w-6 h-6 rounded-full bg-neutral-200 overflow-hidden text-[10px] font-bold text-neutral-600 flex items-center justify-center shrink-0">
+                        {art.author?.image ? (
+                          <img src={art.author.image} alt={art.author.name} className="w-full h-full object-cover" />
+                        ) : (
+                          art.author?.name?.charAt(0) || 'A'
+                        )}
                       </div>
-                      <span className="text-[11px] text-neutral-500 font-medium truncate max-w-[120px]">
+                      <span className="text-[11px] text-neutral-600 font-medium truncate max-w-[150px]">
                         By {art.author.name}
                       </span>
                     </div>
+                    <span className="text-[10px] text-neutral-400 font-medium">
+                      {art.readTime || '3 min read'}
+                    </span>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-
-          {/* Right Latest News Sidebar (4 Cols - Borderless & Iconless) */}
-          <div className="lg:col-span-4 bg-white space-y-4">
-            <div className="border-b border-neutral-200 pb-2">
-              <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-black">
-                LATEST {categoryName.toUpperCase()} NEWS
-              </h3>
-            </div>
-
-            <div className="space-y-4">
-              {latestArticles.map((art, idx) => (
-                <div key={idx} className="pb-3 border-b border-neutral-100 last:border-0 group">
-                  <span className="text-[10px] font-sans font-semibold text-neutral-400 block mb-0.5">
-                    {timeAgos[idx % timeAgos.length]}
-                  </span>
-                  <Link
-                    href={`/${art.category}/${art.slug}`}
-                    className="text-black hover:text-neutral-700 font-serif font-bold text-xs sm:text-sm leading-snug line-clamp-2 hover:underline block"
-                  >
-                    {art.title}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* ========================================================================= */}
-        {/* BOTTOM NEWSLETTER SUBSCRIPTION BANNER (Clean Borderless & Iconless) */}
-        {/* ========================================================================= */}
-        <div className="bg-neutral-100 rounded-lg p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-0.5 max-w-xl">
-            <h4 className="font-serif font-bold text-base sm:text-lg text-black">
-              Stay informed on {categoryName.toLowerCase()} stories that impact you.
-            </h4>
-            <p className="font-sans text-xs text-neutral-600">
-              Get the best of {categoryName} news delivered straight to your inbox.
-            </p>
-          </div>
-
-          <div className="flex items-center gap-2 w-full md:w-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="bg-white border border-neutral-300 rounded px-4 py-2.5 text-xs text-black focus:outline-none focus:ring-2 focus:ring-neutral-900 w-full md:w-64"
-            />
-            <button className="bg-[#000000] hover:bg-neutral-800 text-white font-sans font-bold text-xs px-6 py-2.5 rounded transition-colors shrink-0">
-              Subscribe
-            </button>
-          </div>
-        </div>
+        )}
 
       </main>
 
