@@ -27,7 +27,7 @@ export default async function EditorialPolicyPage() {
 
       {/* Light Editorial Header */}
       <header className="w-full bg-white text-black pt-8 sm:pt-12 pb-6 border-b border-neutral-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-3">
           <div className="flex items-center gap-2 text-[11px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
             <span>POLICIES</span>
             <span className="text-neutral-300">•</span>
@@ -47,7 +47,8 @@ export default async function EditorialPolicyPage() {
 
       {/* Main Content */}
       <main className="w-full flex-1 py-10 sm:py-14 bg-white font-serif">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-10 text-neutral-800 leading-relaxed text-sm sm:text-base">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-10 text-neutral-800 leading-relaxed text-sm sm:text-base">
+          <div className="max-w-4xl space-y-10">
           
           <section className="space-y-3">
             <h2 className="text-xl sm:text-2xl font-serif font-bold text-black border-b border-neutral-200 pb-2">
@@ -110,6 +111,7 @@ export default async function EditorialPolicyPage() {
             </p>
           </section>
 
+          </div>
         </div>
       </main>
 

@@ -28,7 +28,7 @@ export default async function AboutPage() {
 
       {/* Light Editorial Header */}
       <header className="w-full bg-white text-black pt-8 sm:pt-12 pb-6 border-b border-neutral-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-3">
           <div className="flex items-center gap-2 text-[11px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
             <span>COMPANY</span>
             <span className="text-neutral-300">•</span>
@@ -48,10 +48,10 @@ export default async function AboutPage() {
 
       {/* Main Content */}
       <main className="w-full flex-1 py-10 sm:py-14 bg-white font-serif">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-10 text-neutral-800 leading-relaxed text-sm sm:text-base">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-10 text-neutral-800 leading-relaxed text-sm sm:text-base">
           
           {/* Core Pillars */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 font-sans">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 font-sans">
             <div className="p-6 bg-neutral-50 border border-neutral-200 space-y-2">
               <Shield className="w-6 h-6 text-[#c59b27]" />
               <h3 className="text-base font-bold text-black font-serif">Editorial Integrity</h3>
@@ -86,29 +86,31 @@ export default async function AboutPage() {
           </div>
 
           {/* Narrative Sections */}
-          <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-serif font-bold text-black border-b border-neutral-200 pb-2">
-              Our Mission &amp; Foundation
-            </h2>
-            <p className="text-neutral-700">
-              Founded with the conviction that accurate, fearless financial reporting is vital to open markets and a free society, FiscalFusion delivers rigorous coverage across global markets, corporate finance, macroeconomic policy, enterprise technology, and sovereign affairs.
-            </p>
-            <p className="text-neutral-700">
-              Our newsroom operates around the clock across major global hubs, blending classic investigative traditions with contemporary quantitative research. Whether analyzing sovereign monetary policy shifts or reporting on supply chain bottlenecks, we place empirical facts above speculative noise.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-xl sm:text-2xl font-serif font-bold text-black border-b border-neutral-200 pb-2">
-              Our Editorial Promise
-            </h2>
-            <div className="bg-[#fbf9f4] border-l-4 border-[#c59b27] p-6 space-y-2 font-sans">
-              <h3 className="text-base font-serif font-bold text-neutral-900">Truth, Depth, and Market Clarity</h3>
-              <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed">
-                &ldquo;We serve our readership first. We verify before we publish, acknowledge corrections transparently, and maintain zero tolerance for unsourced speculation or sponsored manipulation.&rdquo;
+          <div className="max-w-4xl space-y-10">
+            <section className="space-y-4">
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-black border-b border-neutral-200 pb-2">
+                Our Mission &amp; Foundation
+              </h2>
+              <p className="text-neutral-700">
+                Founded with the conviction that accurate, fearless financial reporting is vital to open markets and a free society, FiscalFusion delivers rigorous coverage across global markets, corporate finance, macroeconomic policy, enterprise technology, and sovereign affairs.
               </p>
-            </div>
-          </section>
+              <p className="text-neutral-700">
+                Our newsroom operates around the clock across major global hubs, blending classic investigative traditions with contemporary quantitative research. Whether analyzing sovereign monetary policy shifts or reporting on supply chain bottlenecks, we place empirical facts above speculative noise.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-black border-b border-neutral-200 pb-2">
+                Our Editorial Promise
+              </h2>
+              <div className="bg-[#fbf9f4] border-l-4 border-[#c59b27] p-6 space-y-2 font-sans">
+                <h3 className="text-base font-serif font-bold text-neutral-900">Truth, Depth, and Market Clarity</h3>
+                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed">
+                  &ldquo;We serve our readership first. We verify before we publish, acknowledge corrections transparently, and maintain zero tolerance for unsourced speculation or sponsored manipulation.&rdquo;
+                </p>
+              </div>
+            </section>
+          </div>
 
         </div>
       </main>

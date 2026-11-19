@@ -73,7 +73,7 @@ export default async function FAQPage() {
 
       {/* Light Editorial Header */}
       <header className="w-full bg-white text-black pt-8 sm:pt-12 pb-6 border-b border-neutral-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-3">
           <div className="flex items-center gap-2 text-[11px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
             <span>POLICIES</span>
             <span className="text-neutral-300">•</span>
@@ -93,21 +93,23 @@ export default async function FAQPage() {
 
       {/* Main Content */}
       <main className="w-full flex-1 py-10 sm:py-14 bg-white font-sans">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
-          <FAQAccordion faqs={faqs} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
+          <div className="max-w-4xl space-y-8">
+            <FAQAccordion faqs={faqs} />
 
-          <div className="bg-[#fbf9f4] p-6 border border-neutral-200 border-l-4 border-l-[#c59b27] space-y-2 font-sans">
-            <h4 className="font-serif font-bold text-black text-base">Have additional questions or need assistance?</h4>
-            <p className="text-xs text-neutral-600">
-              Our reader support and editorial communications team is on standby to assist you.
-            </p>
-            <div className="pt-1">
-              <Link
-                href="/contact"
-                className="inline-block bg-[#c59b27] hover:bg-[#b0881e] text-white font-sans font-bold text-xs uppercase tracking-wider px-5 py-2.5 transition-colors"
-              >
-                Contact Reader Desk
-              </Link>
+            <div className="bg-[#fbf9f4] p-6 border border-neutral-200 border-l-4 border-l-[#c59b27] space-y-2 font-sans">
+              <h4 className="font-serif font-bold text-black text-base">Have additional questions or need assistance?</h4>
+              <p className="text-xs text-neutral-600">
+                Our reader support and editorial communications team is on standby to assist you.
+              </p>
+              <div className="pt-1">
+                <Link
+                  href="/contact"
+                  className="inline-block bg-[#c59b27] hover:bg-[#b0881e] text-white font-sans font-bold text-xs uppercase tracking-wider px-5 py-2.5 transition-colors"
+                >
+                  Contact Reader Desk
+                </Link>
+              </div>
             </div>
           </div>
         </div>
