@@ -1,18 +1,31 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { getAllArticles, SITE_URL, SITE_NAME } from '@/lib/newsData';
 
-export const metadata = {
-  title: 'Source Methodology | Gazetta',
-  description: 'Our investigative verification framework, primary document analysis, and rigorous data journalism protocols.',
+export const metadata: Metadata = {
+  title: 'Source Methodology & Verification Framework',
+  description: 'Our investigative verification framework, primary document analysis, and rigorous data journalism protocols at FiscalFusion.',
+  alternates: {
+    canonical: '/source-methodology',
+  },
+  openGraph: {
+    title: `Source Methodology | ${SITE_NAME}`,
+    description: 'The rigorous empirical methods, primary documentation standards, and verification frameworks guiding FiscalFusion reporting.',
+    url: `${SITE_URL}/source-methodology`,
+    siteName: SITE_NAME,
+  },
 };
 
-export default function SourceMethodologyPage() {
+export default async function SourceMethodologyPage() {
+  const allArticles = await getAllArticles();
+
   return (
     <div className="min-h-screen bg-white text-black flex flex-col font-serif selection:bg-neutral-200 selection:text-black">
-      <Navbar articles={[]} />
+      <Navbar articles={allArticles} />
 
-      {/* Light Editorial Header - No black banner */}
+      {/* Light Editorial Header */}
       <header className="w-full bg-white text-black pt-8 sm:pt-12 pb-6 border-b border-neutral-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
           <div className="flex items-center gap-2 text-[11px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
@@ -24,10 +37,10 @@ export default function SourceMethodologyPage() {
             Source &amp; Verification Methodology
           </h1>
           <p className="text-base sm:text-lg font-sans text-neutral-600 leading-relaxed max-w-3xl">
-            The rigorous empirical methods, primary documentation standards, and verification frameworks guiding Gazetta reporting.
+            The rigorous empirical methods, primary documentation standards, and verification frameworks guiding FiscalFusion reporting.
           </p>
           <div className="pt-2 text-xs font-sans text-neutral-400">
-            Research &amp; Standards Desk • Gazetta Investigative Unit
+            Research &amp; Standards Desk • FiscalFusion Investigative Unit
           </div>
         </div>
       </header>
@@ -41,10 +54,10 @@ export default function SourceMethodologyPage() {
               1. Primacy of Primary Documents
             </h2>
             <p className="text-neutral-700">
-              At Gazetta, investigative dispatches and breaking analyses are grounded in raw, unvarnished primary sources. We prioritize certified corporate filings (SEC, ESMA, Companies House), judicial court dockets, legislative transcripts, freedom-of-information disclosures, and peer-reviewed scientific studies over hearsay or secondary citations.
+              At FiscalFusion, investigative dispatches and breaking market analyses are grounded in raw, unvarnished primary sources. We prioritize certified corporate filings (SEC, ESMA, Companies House, CFTC), central bank declarations, judicial court dockets, legislative transcripts, and audited financial statements over hearsay or secondary citations.
             </p>
             <p className="text-neutral-700">
-              Whenever lawful and ethically responsible, we publish hyperlinked citations or embedded excerpts of the underlying source documentation directly within our articles so readers can inspect the evidence firsthand.
+              Whenever lawful and ethically responsible, we publish hyperlinked citations or embedded excerpts of the underlying source documentation directly within our articles so readers and financial analysts can inspect the evidence firsthand.
             </p>
           </section>
 
@@ -62,14 +75,14 @@ export default function SourceMethodologyPage() {
               3. Independent Technical Review Panel
             </h2>
             <p className="text-neutral-700">
-              When reporting on cutting-edge disciplines—including artificial intelligence models, post-quantum cryptography, macroeconomic liquidity cycles, and climate science—drafts undergo review by independent subject-matter experts who possess no financial stake in the outcome of the reporting.
+              When reporting on cutting-edge disciplines—including artificial intelligence models, post-quantum cryptography, macroeconomic liquidity cycles, and sovereign debt restructuring—drafts undergo review by independent subject-matter experts who possess no financial stake in the outcome of the reporting.
             </p>
           </section>
 
           <div className="bg-[#fbf9f4] p-6 border border-neutral-200 border-l-4 border-l-[#c59b27] font-sans text-xs sm:text-sm space-y-2">
             <h4 className="font-bold text-black uppercase tracking-wider">Methodology Questions &amp; Data Audits</h4>
             <p className="text-neutral-700 leading-relaxed">
-              If you have technical inquiries or wish to challenge the statistical methodology of any Gazetta dispatch, reach our investigative desk at <span className="font-semibold text-black">data@gazetta.com</span>.
+              If you have technical inquiries or wish to challenge the statistical methodology of any FiscalFusion dispatch, reach our investigative desk at <span className="font-semibold text-black">data@fiscalfusion.org</span>.
             </p>
           </div>
 

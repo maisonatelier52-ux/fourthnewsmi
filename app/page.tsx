@@ -1,8 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { getAllArticles, Article } from '@/lib/newsData';
+import { getAllArticles, Article, SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION } from '@/lib/newsData';
+
+export const metadata: Metadata = {
+  title: `${SITE_NAME} | ${SITE_TAGLINE}`,
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default async function Home() {
   const allArticles: Article[] = await getAllArticles();
@@ -46,7 +55,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-white text-black flex flex-col font-serif selection:bg-neutral-200 selection:text-black">
-      {/* Navigation Header with "Domain Name" logo */}
+      {/* Navigation Header with FiscalFusion logo */}
       <Navbar articles={allArticles} />
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-2 w-full space-y-4 sm:space-y-6 lg:space-y-8">
@@ -58,22 +67,22 @@ export default async function Home() {
           <section className="pt-2 sm:pt-4 pb-1 sm:pb-4">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 items-center">
               {/* Left Column (6 Cols) - Headline & Detailed Description */}
-              <div className="lg:col-span-6 space-y-2.5 sm:space-y-4 flex flex-col justify-center">
-                <span className="text-xs font-sans font-bold uppercase tracking-widest text-neutral-500 block">
+              <div className="lg:col-span-6 space-y-1.5 sm:space-y-3.5 flex flex-col justify-center">
+                <span className="text-[10px] sm:text-xs font-sans font-bold uppercase tracking-wider sm:tracking-widest text-neutral-500 block">
                   EXCLUSIVE COVERAGE • {topMainHero.date}
                 </span>
                 <Link
                   href={`/${topMainHero.category}/${topMainHero.slug}`}
-                  className="text-neutral-950 hover:text-neutral-600 font-editorial-serif font-bold text-2xl sm:text-3xl md:text-4xl leading-[1.15] block transition-colors"
+                  className="text-neutral-950 hover:text-neutral-600 font-editorial-serif font-bold text-xl sm:text-3xl md:text-4xl leading-[1.12] sm:leading-[1.15] block transition-colors"
                 >
                   {topMainHero.title}
                 </Link>
-                <p className="text-sm sm:text-base text-neutral-600 font-sans leading-snug">
+                <p className="text-xs sm:text-base text-neutral-600 font-sans leading-snug sm:leading-snug">
                   {topMainHero.shortdescription}
                 </p>
-                <div className="pt-1.5 sm:pt-2 flex items-center justify-between text-xs font-sans text-neutral-500">
+                <div className="pt-1.5 sm:pt-2 flex items-center justify-between text-[11px] sm:text-xs font-sans text-neutral-500">
                   <span className="font-semibold text-neutral-800">By {topMainHero.author.name}</span>
-                  <span className="uppercase text-[10px] tracking-wider bg-neutral-100 px-2 py-1 font-bold text-neutral-700">
+                  <span className="uppercase text-[9px] sm:text-[10px] tracking-wider bg-neutral-100 px-2 py-0.5 sm:py-1 font-bold text-neutral-700">
                     {topMainHero.category}
                   </span>
                 </div>
@@ -116,16 +125,16 @@ export default async function Home() {
 
                   {/* Bottom Overlay Text */}
                   <div className="relative z-10 space-y-2.5">
-                    <span className="px-3 py-1 bg-[#000000]/90 text-white text-[10px] font-sans font-bold uppercase tracking-widest inline-block border border-neutral-700">
+                    <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 bg-[#000000]/90 text-white text-[9px] sm:text-[10px] font-sans font-bold uppercase tracking-wider sm:tracking-widest inline-block border border-neutral-700">
                       FEATURED DISPATCH • {heroMain.date}
                     </span>
                     <Link
                       href={`/${heroMain.category}/${heroMain.slug}`}
-                      className="text-white hover:text-neutral-200 font-serif font-bold text-2xl sm:text-4xl leading-tight block hover:underline"
+                      className="text-white hover:text-neutral-200 font-serif font-bold text-xl sm:text-4xl leading-snug sm:leading-tight block hover:underline"
                     >
                       {heroMain.title}
                     </Link>
-                    <p className="text-xs sm:text-sm text-neutral-200 font-sans leading-relaxed line-clamp-2 max-w-2xl">
+                    <p className="text-[11px] sm:text-sm text-neutral-200 font-sans leading-relaxed line-clamp-2 max-w-2xl">
                       {heroMain.shortdescription}
                     </p>
                     <div className="pt-2 border-t border-white/20 text-xs font-sans text-neutral-300 font-medium">

@@ -1,14 +1,75 @@
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { getArticlesByCategory, getAllArticles, CATEGORIES, Article } from '@/lib/newsData';
+import {
+  getArticlesByCategory,
+  getAllArticles,
+  CATEGORIES,
+  SITE_URL,
+  SITE_NAME,
+  PUBLISHER_NAME,
+} from '@/lib/newsData';
 
 interface CategoryPageProps {
   params: Promise<{
     category: string;
   }>;
+}
+
+export async function generateStaticParams() {
+  return CATEGORIES.map((c) => ({
+    category: c.id.toLowerCase(),
+  }));
+}
+
+export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
+  const { category: rawCategory } = await params;
+  const categoryInfo = CATEGORIES.find((c) => c.id.toLowerCase() === rawCategory.toLowerCase());
+
+  if (!categoryInfo) {
+    return {
+      title: 'Category Not Found',
+      description: 'The requested news category could not be located.',
+    };
+  }
+
+  const categoryName = categoryInfo.name;
+  const categoryDesc = categoryInfo.description;
+  const categoryUrl = `${SITE_URL}/${categoryInfo.id}`;
+
+  return {
+    title: `${categoryName} News & Analysis`,
+    description: categoryDesc,
+    alternates: {
+      canonical: `/${categoryInfo.id}`,
+    },
+    openGraph: {
+      type: 'website',
+      locale: 'en_US',
+      url: categoryUrl,
+      siteName: SITE_NAME,
+      title: `${categoryName} | ${SITE_NAME}`,
+      description: categoryDesc,
+      images: [
+        {
+          url: '/images/us_futures_oil_prices_inflation.webp',
+          width: 1200,
+          height: 630,
+          alt: `${categoryName} - ${SITE_NAME}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${categoryName} | ${SITE_NAME}`,
+      description: categoryDesc,
+      site: '@FiscalFusion',
+      creator: '@FiscalFusion',
+    },
+  };
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
@@ -36,16 +97,72 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   // All remaining articles strictly from this category (from item 5 onwards, no repetition)
   const moreStories = articles.slice(4);
 
+  const categoryUrl = `${SITE_URL}/${rawCategory}`;
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: SITE_URL,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: categoryName,
+        item: categoryUrl,
+      },
+    ],
+  };
+
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${categoryName} Coverage | ${SITE_NAME}`,
+    url: categoryUrl,
+    description: categoryDesc,
+    publisher: {
+      '@type': 'NewsMediaOrganization',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    hasPart: articles.map((a) => ({
+      '@type': 'NewsArticle',
+      headline: a.title,
+      url: `${SITE_URL}/${a.category}/${a.slug}`,
+      datePublished: a.date,
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-white text-neutral-900 flex flex-col font-serif selection:bg-neutral-200 selection:text-neutral-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
       <Navbar articles={allArticles} />
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full space-y-6">
-        
         {/* ========================================================================= */}
-        {/* CATEGORY HEADER BANNER (No Borders, No Icons, Clean Typography) */}
+        {/* CATEGORY HEADER BANNER */}
         {/* ========================================================================= */}
         <div className="pb-3 border-b border-neutral-200 space-y-2">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[11px] font-sans text-neutral-500 uppercase tracking-wider font-semibold">
+            <Link href="/" className="hover:text-black transition-colors">
+              Home
+            </Link>
+            <span className="text-neutral-300 font-light">/</span>
+            <span className="text-neutral-900 font-bold">
+              {categoryName}
+            </span>
+          </nav>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold text-black tracking-tight">
             {categoryName}
           </h1>
@@ -58,8 +175,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         {/* TOP SECTION: LEFT FEATURED HERO (8 COLS) + RIGHT TRENDING (4 COLS) */}
         {/* ========================================================================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Left Main Hero Featured Report (8 Cols - Borderless) */}
+          {/* Left Main Hero Featured Report (8 Cols) */}
           <div className="lg:col-span-8 bg-white space-y-4">
             {featuredArticle && (
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
@@ -69,6 +185,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     src={featuredArticle.image}
                     alt={featuredArticle.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="eager"
                   />
                   <span className="absolute bottom-3 left-3 bg-[#000000] text-white text-[10px] font-sans font-bold uppercase tracking-wider px-2.5 py-1">
                     FEATURED REPORT
@@ -96,7 +213,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     <div className="flex items-center gap-2.5">
                       <div className="w-8 h-8 rounded-full bg-neutral-200 overflow-hidden shrink-0">
                         {featuredArticle.author.image ? (
-                          <img src={featuredArticle.author.image} alt={featuredArticle.author.name} className="w-full h-full object-cover" />
+                          <img
+                            src={featuredArticle.author.image}
+                            alt={featuredArticle.author.name}
+                            className="w-full h-full object-cover"
+                          />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center text-neutral-500 font-bold text-xs">
                             {featuredArticle.author.name.charAt(0)}
@@ -125,7 +246,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             )}
           </div>
 
-          {/* Right Trending List (4 Cols - Borderless & Iconless) */}
+          {/* Right Trending List (4 Cols) */}
           <div className="lg:col-span-4 bg-white space-y-4">
             <div className="border-b border-neutral-200 pb-2">
               <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-black">
@@ -154,7 +275,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         </div>
 
         {/* ========================================================================= */}
-        {/* MIDDLE SECTION: MORE STORIES IN CATEGORY (All Remaining Unique Articles) */}
+        {/* MIDDLE SECTION: MORE STORIES IN CATEGORY */}
         {/* ========================================================================= */}
         {moreStories.length > 0 && (
           <div className="space-y-4 pt-4 border-t border-neutral-200">
@@ -168,11 +289,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               {moreStories.map((art, idx) => (
                 <div key={idx} className="bg-white flex flex-col justify-between group">
                   <div>
-                    <Link href={`/${art.category}/${art.slug}`} className="h-44 w-full overflow-hidden bg-neutral-100 block relative">
+                    <Link
+                      href={`/${art.category}/${art.slug}`}
+                      className="h-44 w-full overflow-hidden bg-neutral-100 block relative"
+                    >
                       <img
                         src={art.image}
                         alt={art.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
                       />
                     </Link>
                     <div className="pt-3 space-y-2">
@@ -195,7 +320,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-6 rounded-full bg-neutral-200 overflow-hidden text-[10px] font-bold text-neutral-600 flex items-center justify-center shrink-0">
                         {art.author?.image ? (
-                          <img src={art.author.image} alt={art.author.name} className="w-full h-full object-cover" />
+                          <img
+                            src={art.author.image}
+                            alt={art.author.name}
+                            className="w-full h-full object-cover"
+                          />
                         ) : (
                           art.author?.name?.charAt(0) || 'A'
                         )}
@@ -213,7 +342,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             </div>
           </div>
         )}
-
       </main>
 
       <Footer />

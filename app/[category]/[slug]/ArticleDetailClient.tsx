@@ -100,12 +100,12 @@ export default function ArticleDetailClient({
               </Link>
             </nav>
 
-            <h1 className="text-2xl sm:text-4xl md:text-[2.6rem] font-serif font-bold leading-[1.15] tracking-tight text-black">
+            <h1 className="text-xl sm:text-4xl md:text-[2.6rem] font-serif font-bold leading-[1.12] sm:leading-[1.15] tracking-tight text-black">
               {article.title}
             </h1>
 
             {/* Excerpt */}
-            <p className="text-sm sm:text-[15px] font-sans text-neutral-600 leading-normal font-normal">
+            <p className="text-xs sm:text-[15px] font-sans text-neutral-600 leading-snug sm:leading-normal font-normal">
               {article.shortdescription}
             </p>
           </div>
@@ -159,6 +159,8 @@ export default function ArticleDetailClient({
                   src={article.image}
                   alt={article.title}
                   className="w-full h-full object-cover"
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
               <div className="text-right text-[11px] font-sans text-neutral-400">
@@ -307,6 +309,7 @@ export default function ArticleDetailClient({
                       src={rel.image}
                       alt={rel.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
                     />
                   </div>
                   <div className="space-y-1">

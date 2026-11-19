@@ -1,15 +1,24 @@
 import React from 'react';
 import Link from 'next/link';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { getAllAuthors, getAllArticles, Article, Author } from '@/lib/newsData';
+import { getAllAuthors, getAllArticles, Article, Author, SITE_URL, SITE_NAME } from '@/lib/newsData';
 import { Mail, FileText, ArrowRight, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Our Team | Gazetta',
+  title: 'Our Editorial Team & Correspondents',
   description:
-    'Meet the journalists, analysts, and correspondents behind Gazetta — a world-class editorial team committed to independent, rigorous reporting.',
+    'Meet the journalists, analysts, and financial correspondents behind FiscalFusion — committed to independent, rigorous reporting across global markets.',
+  alternates: {
+    canonical: '/team',
+  },
+  openGraph: {
+    title: `Our Editorial Team | ${SITE_NAME}`,
+    description: 'Meet the journalists, analysts, and correspondents behind FiscalFusion.',
+    url: `${SITE_URL}/team`,
+    siteName: SITE_NAME,
+  },
 };
 
 /* ─────────────────────────────────────────────
@@ -23,7 +32,7 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 
 /* ─────────────────────────────────────────────
-   AuthorCard sub-component (server component)
+   AuthorCard sub-component
 ───────────────────────────────────────────── */
 function AuthorCard({
   author,
@@ -42,8 +51,6 @@ function AuthorCard({
       className="group relative bg-white border border-neutral-200 hover:border-neutral-400 hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden"
       aria-label={`View profile of ${author.name}`}
     >
-
-
       {/* Top section: Photo + name */}
       <div className="p-6 pb-4 flex items-start gap-5">
         <div className="relative shrink-0">
@@ -60,72 +67,61 @@ function AuthorCard({
           </span>
         </div>
 
-        <div className="flex-1 min-w-0">
-          <h2 className="font-editorial-serif text-xl font-bold text-neutral-950 leading-tight transition-colors duration-200 truncate">
+        <div className="flex-1 min-w-0 space-y-1">
+          <h2 className="font-editorial-serif text-xl sm:text-2xl font-bold text-neutral-950 group-hover:text-neutral-700 transition-colors">
             {author.name}
           </h2>
-          <p className="mt-1 text-[11px] sm:text-xs font-sans font-semibold uppercase tracking-wider text-neutral-500 leading-snug">
+          <p className="text-xs font-sans font-semibold uppercase tracking-wider text-[#c59b27]">
             {author.role}
           </p>
-
-          {/* Category tags */}
-          <div className="mt-2.5 flex flex-wrap gap-1.5">
-            {categories.map((cat) => (
-              <span
-                key={cat}
-                className={`text-[9px] font-sans font-bold uppercase tracking-wider px-2 py-0.5 ${CATEGORY_COLORS[cat] ?? 'bg-neutral-100 text-neutral-600 border border-neutral-200'}`}
-              >
-                {cat === 'us' ? 'U.S. News' : cat}
-              </span>
-            ))}
+          <div className="flex items-center gap-1.5 text-xs font-sans text-neutral-400 pt-1">
+            <Mail className="w-3.5 h-3.5" />
+            <span className="truncate">{author.email}</span>
           </div>
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="mx-6 border-t border-neutral-100" />
-
-      {/* Bio */}
-      <div className="px-6 py-4 flex-1">
+      {/* Middle section: Bio */}
+      <div className="px-6 pb-4 flex-1">
         <p className="text-xs sm:text-sm font-sans text-neutral-600 leading-relaxed line-clamp-3">
           {author.bio}
         </p>
       </div>
 
-      {/* Latest article preview */}
-      {latestArticle && (
-        <div className="mx-6 mb-4 p-3 bg-neutral-50 border border-neutral-200 space-y-1">
-          <span className="text-[10px] font-sans font-bold uppercase tracking-widest text-neutral-400">
-            Latest Story
+      {/* Categories covered */}
+      <div className="px-6 pb-4 flex flex-wrap gap-1.5">
+        {categories.map((cat) => (
+          <span
+            key={cat}
+            className={`text-[9px] font-sans font-bold uppercase tracking-wider px-2 py-0.5 ${
+              CATEGORY_COLORS[cat] ?? 'bg-neutral-50 text-neutral-600 border border-neutral-200'
+            }`}
+          >
+            {cat === 'us' ? 'U.S. News' : cat}
           </span>
-          <p className="text-xs font-sans font-semibold text-neutral-800 leading-snug line-clamp-2 group-hover:text-neutral-950 transition-colors">
-            {latestArticle.title}
-          </p>
+        ))}
+      </div>
+
+      {/* Bottom section: Latest dispatch */}
+      {latestArticle && (
+        <div className="px-6 py-3 bg-neutral-50 border-t border-neutral-100 flex items-center justify-between text-xs font-sans">
+          <div className="flex-1 min-w-0 pr-3">
+            <span className="text-[10px] uppercase font-bold text-neutral-400 block tracking-wider">
+              Latest Report
+            </span>
+            <span className="text-neutral-800 font-medium truncate block font-editorial-serif">
+              {latestArticle.title}
+            </span>
+          </div>
+          <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-neutral-950 group-hover:translate-x-1 transition-all shrink-0" />
         </div>
       )}
-
-      {/* Footer row */}
-      <div className="px-6 pb-5 flex items-center justify-between">
-        <a
-          href={`mailto:${author.email}`}
-          className="flex items-center gap-1.5 text-[11px] font-sans text-neutral-400 hover:text-neutral-950 transition-colors"
-          aria-label={`Email ${author.name}`}
-        >
-          <Mail className="w-3.5 h-3.5" />
-          <span className="truncate max-w-[140px]">{author.email}</span>
-        </a>
-
-        <span className="flex items-center gap-1 text-[11px] font-sans font-bold text-neutral-950 transition-colors uppercase tracking-wider">
-          Profile
-          <ArrowRight className="w-3.5 h-3.5 translate-x-0 group-hover:translate-x-1 transition-transform duration-200" />
-        </span>
-      </div>
     </Link>
   );
 }
 
 /* ─────────────────────────────────────────────
-   Page component
+   Main Team Page Component
 ───────────────────────────────────────────── */
 export default async function TeamPage() {
   const [authors, allArticles] = await Promise.all([
@@ -133,10 +129,9 @@ export default async function TeamPage() {
     getAllArticles(),
   ]);
 
-  // Pre-compute article counts, categories, and latest article per author
   const authorStats = authors.map((author) => {
     const authored = allArticles.filter(
-      (a) => a.author?.slug === author.slug
+      (a) => a.author?.slug?.toLowerCase() === author.slug.toLowerCase()
     );
     const categories = [...new Set(authored.map((a) => a.category))];
     return {
@@ -156,7 +151,7 @@ export default async function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-3">
           <div className="flex items-center gap-2 text-[11px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
             <Users className="w-3.5 h-3.5" />
-            <span>GAZETTA</span>
+            <span>FISCALFUSION</span>
             <span className="text-neutral-300">•</span>
             <span className="text-neutral-500">OUR TEAM</span>
           </div>
@@ -165,21 +160,18 @@ export default async function TeamPage() {
           </h1>
           <p className="text-base sm:text-lg font-sans text-neutral-600 leading-relaxed max-w-3xl">
             World-class journalists and analysts committed to independent, rigorous, and fearless reporting
-            across finance, business, geopolitics, and U.S. affairs.
+            across finance, business, geopolitics, and U.S. economic affairs.
           </p>
-
-
         </div>
       </header>
 
       {/* ─── MAIN CONTENT ─── */}
       <main className="flex-1 w-full py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-
           {/* Section label */}
           <div className="flex items-center gap-3 mb-8">
             <span className="text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-neutral-400">
-              Editorial Staff
+              Editorial Staff &amp; Correspondents
             </span>
             <div className="flex-1 h-px bg-neutral-200" />
           </div>
@@ -207,13 +199,12 @@ export default async function TeamPage() {
                 Our Editorial Commitment
               </h3>
               <p className="font-sans text-sm text-neutral-400 leading-relaxed max-w-2xl">
-                Every story published on Gazetta has been independently reported, fact-checked by at least
+                Every story published on FiscalFusion has been independently reported, fact-checked by at least
                 two senior editors, and reviewed against our strict conflicts-of-interest policy. Our
                 reporters operate free from commercial, political, or institutional influence.
               </p>
             </div>
           </div>
-
         </div>
       </main>
 

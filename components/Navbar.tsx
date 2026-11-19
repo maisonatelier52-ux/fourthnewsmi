@@ -161,15 +161,15 @@ export default function Navbar({ articles = [] }: NavbarProps) {
               </button>
             </div>
 
-            {/* Center: GAZETTA Brand Masthead & Subtitle (Absolute Centered) */}
+            {/* Center: FISCALFUSION Brand Masthead & Subtitle (Absolute Centered) */}
             <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-center pointer-events-auto">
-              <Link href="/" className="inline-block group">
+              <Link href="/" className="inline-block group" aria-label="FiscalFusion Homepage">
                 <span className="font-editorial-serif text-2xl sm:text-4xl md:text-5xl font-normal tracking-[0.14em] uppercase text-black block leading-none transition-opacity group-hover:opacity-85">
-                  GAZETTA
+                  FISCALFUSION
                 </span>
               </Link>
               <p className="mt-0.5 sm:mt-1 text-[7.5px] sm:text-[9px] md:text-[10px] font-sans font-semibold uppercase tracking-[0.28em] sm:tracking-[0.32em] text-[#c59b27] whitespace-nowrap">
-                NEWS. PERSPECTIVES. IMPACT.
+                GLOBAL FINANCIAL INTELLIGENCE &amp; ECONOMIC ANALYSIS
               </p>
             </div>
 
@@ -184,14 +184,14 @@ export default function Navbar({ articles = [] }: NavbarProps) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
             
             {/* Nav Links */}
-            <div className="flex items-center space-x-1 sm:space-x-4 overflow-x-auto no-scrollbar py-0">
+            <div className="flex items-center gap-3 sm:gap-6 md:gap-8 overflow-x-auto no-scrollbar py-0">
               {navLinks.map((link, idx) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={`${link.label}-${idx}`}
                     href={link.href}
-                    className={`py-2.5 sm:py-3 ${idx === 0 ? 'pl-0 pr-2 sm:pr-3' : 'px-2 sm:px-3'} text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.1em] transition-all relative shrink-0 ${
+                    className={`py-2.5 sm:py-3 px-2 sm:px-3 text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.14em] sm:tracking-[0.18em] transition-all relative shrink-0 ${
                       isActive
                         ? 'text-neutral-950'
                         : 'text-neutral-700 hover:text-black'
@@ -240,7 +240,7 @@ export default function Navbar({ articles = [] }: NavbarProps) {
       {/* ========================================================================= */}
       {/* 4. TRENDING NOW BAR (Non-sticky: scrolls away naturally with page body)   */}
       {/* ========================================================================= */}
-      <div className="w-full bg-white border-b border-neutral-200 font-sans">
+      <div className="w-full bg-white border-y border-neutral-200 font-sans mt-1.5 sm:mt-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-stretch">
           
           {/* Black Label Box with Gold Lightning Bolt & Text (Icon-only on mobile) */}
@@ -258,9 +258,9 @@ export default function Navbar({ articles = [] }: NavbarProps) {
                 <Link
                   key={story.num + story.text}
                   href={story.href}
-                  className={`flex items-center gap-3 px-4 flex-1 min-w-0 cursor-pointer group ${
-                    i === 0 ? 'pl-0' : ''
-                  } ${i > 0 ? 'hidden md:flex' : 'flex'}`}
+                  className={`flex items-center gap-3.5 px-3 sm:px-4 flex-1 min-w-0 cursor-pointer group ${
+                    i > 0 ? 'hidden md:flex' : 'flex'
+                  }`}
                 >
                   <span className="font-editorial-serif italic text-neutral-800 font-bold text-sm shrink-0">
                     {story.num}
@@ -274,7 +274,7 @@ export default function Navbar({ articles = [] }: NavbarProps) {
           </div>
 
           {/* Previous / Next Arrow Controls (Flush Right) */}
-          <div className="flex items-center gap-1.5 pl-3 border-l border-neutral-200 shrink-0">
+          <div className="flex items-center gap-2 pl-3 border-l border-neutral-200 shrink-0">
             <button
               onClick={() => setTrendIndex((prev) => (prev - 1 + trendingStories.length) % trendingStories.length)}
               className="w-7 h-7 border border-neutral-300 flex items-center justify-center text-neutral-700 hover:bg-neutral-100 transition-colors cursor-pointer"

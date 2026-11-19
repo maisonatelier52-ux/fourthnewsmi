@@ -1,18 +1,31 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { getAllArticles, SITE_URL, SITE_NAME, PUBLISHER_NAME } from '@/lib/newsData';
 
-export const metadata = {
-  title: 'Legal & Compliance | Gazetta',
-  description: 'Legal notices, corporate entity disclosures, regulatory framework, and copyright compliance information.',
+export const metadata: Metadata = {
+  title: 'Legal Notices & Regulatory Compliance',
+  description: 'Legal notices, corporate entity disclosures, regulatory framework, and copyright compliance information for FiscalFusion.',
+  alternates: {
+    canonical: '/legal',
+  },
+  openGraph: {
+    title: `Legal Notices & Compliance | ${SITE_NAME}`,
+    description: 'Corporate registration details, regulatory compliance standards, and intellectual property rights notices for FiscalFusion.',
+    url: `${SITE_URL}/legal`,
+    siteName: SITE_NAME,
+  },
 };
 
-export default function LegalPage() {
+export default async function LegalPage() {
+  const allArticles = await getAllArticles();
+
   return (
     <div className="min-h-screen bg-white text-black flex flex-col font-serif selection:bg-neutral-200 selection:text-black">
-      <Navbar articles={[]} />
+      <Navbar articles={allArticles} />
 
-      {/* Light Editorial Header - No black banner */}
+      {/* Light Editorial Header */}
       <header className="w-full bg-white text-black pt-8 sm:pt-12 pb-6 border-b border-neutral-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
           <div className="flex items-center gap-2 text-[11px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
@@ -27,7 +40,7 @@ export default function LegalPage() {
             Corporate registration details, regulatory compliance standards, and intellectual property rights notices.
           </p>
           <div className="pt-2 text-xs font-sans text-neutral-400">
-            Corporate Affairs • Gazetta International Media Group
+            Corporate Affairs • {PUBLISHER_NAME}
           </div>
         </div>
       </header>
@@ -41,7 +54,7 @@ export default function LegalPage() {
               Corporate Entity &amp; Jurisdictional Registration
             </h2>
             <p className="text-neutral-700">
-              Gazetta is owned and published by Gazetta Media Group LLC, a registered independent media enterprise incorporated under the laws of New York, with regional operations governed by United States federal communications standards and international copyright treaties.
+              FiscalFusion is owned and operated by FiscalFusion Media Group LLC, a registered independent financial media enterprise incorporated under the laws of New York, with regional operations governed by United States federal communications standards and international copyright treaties.
             </p>
           </section>
 
@@ -64,9 +77,9 @@ export default function LegalPage() {
 
             <div className="bg-[#fbf9f4] p-6 border border-neutral-200 border-l-4 border-l-[#c59b27] font-sans text-xs sm:text-sm space-y-2">
               <p className="font-bold text-black uppercase tracking-wider">Designated Legal &amp; Copyright Agent</p>
-              <p className="text-neutral-700">Gazetta Legal &amp; Compliance Bureau</p>
+              <p className="text-neutral-700">FiscalFusion Legal &amp; Compliance Bureau</p>
               <p className="text-neutral-700">750 Third Avenue, 18th Floor, New York, NY 10017, USA</p>
-              <p className="text-[#c59b27] font-bold">Email: legal@gazetta.com</p>
+              <p className="text-[#c59b27] font-bold">Email: legal@fiscalfusion.org</p>
             </div>
           </section>
 

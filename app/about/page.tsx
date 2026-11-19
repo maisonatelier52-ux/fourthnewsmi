@@ -1,19 +1,32 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Shield, Award, Globe, Users } from 'lucide-react';
+import { getAllArticles, SITE_URL, SITE_NAME, PUBLISHER_NAME } from '@/lib/newsData';
 
-export const metadata = {
-  title: 'About Us | Gazetta',
-  description: 'Learn about Gazetta, our journalistic mission, core standards, and global reporting network.',
+export const metadata: Metadata = {
+  title: 'About Us — Editorial Mission & Standards',
+  description: 'Learn about FiscalFusion, our financial journalism mission, core standards, global correspondent bureau, and governance.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: `About Us | ${SITE_NAME}`,
+    description: 'Independent financial journalism, deep-dive investigations, and authoritative dispatches for an interconnected world.',
+    url: `${SITE_URL}/about`,
+    siteName: SITE_NAME,
+  },
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const allArticles = await getAllArticles();
+
   return (
     <div className="min-h-screen bg-white text-black flex flex-col font-serif selection:bg-neutral-200 selection:text-black">
-      <Navbar articles={[]} />
+      <Navbar articles={allArticles} />
 
-      {/* Light Editorial Header - No black banner */}
+      {/* Light Editorial Header */}
       <header className="w-full bg-white text-black pt-8 sm:pt-12 pb-6 border-b border-neutral-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
           <div className="flex items-center gap-2 text-[11px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
@@ -22,13 +35,13 @@ export default function AboutPage() {
             <span className="text-neutral-500">ABOUT US</span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-black leading-tight">
-            About Gazetta
+            About FiscalFusion
           </h1>
           <p className="text-base sm:text-lg font-sans text-neutral-600 leading-relaxed max-w-3xl">
-            Independent journalism, deep-dive investigations, and authoritative dispatches for an interconnected world.
+            Independent financial journalism, deep-dive market investigations, and authoritative economic dispatches for global decision makers.
           </p>
           <div className="pt-2 text-xs font-sans text-neutral-400">
-            Founded 2018 • Independent International Publishing Desk
+            Founded 2024 • Independent Financial Publishing Desk • {PUBLISHER_NAME}
           </div>
         </div>
       </header>
@@ -43,15 +56,15 @@ export default function AboutPage() {
               <Shield className="w-6 h-6 text-[#c59b27]" />
               <h3 className="text-base font-bold text-black font-serif">Editorial Integrity</h3>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                Strict independence from commercial, political, or institutional influence in every report.
+                Strict independence from commercial, political, or institutional influence in every financial report.
               </p>
             </div>
 
             <div className="p-6 bg-neutral-50 border border-neutral-200 space-y-2">
               <Globe className="w-6 h-6 text-[#c59b27]" />
-              <h3 className="text-base font-bold text-black font-serif">Global Correspondents</h3>
+              <h3 className="text-base font-bold text-black font-serif">Global Financial Network</h3>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                Field correspondents based in over 40 financial capitals and diplomatic hubs worldwide.
+                Field correspondents based in major financial capitals and diplomatic hubs across New York, London, Tokyo, and Frankfurt.
               </p>
             </div>
 
@@ -59,7 +72,7 @@ export default function AboutPage() {
               <Award className="w-6 h-6 text-[#c59b27]" />
               <h3 className="text-base font-bold text-black font-serif">Fact-Checked Precision</h3>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                Multi-source verification methodology applied to every statistical claim and breaking dispatch.
+                Multi-source verification methodology applied to every statistical claim, SEC filing, and monetary dispatch.
               </p>
             </div>
 
@@ -78,10 +91,10 @@ export default function AboutPage() {
               Our Mission &amp; Foundation
             </h2>
             <p className="text-neutral-700">
-              Founded with the conviction that accurate, fearless reporting is vital to a free society, Gazetta delivers rigorous coverage across technology, geopolitics, economic trends, science, and global culture.
+              Founded with the conviction that accurate, fearless financial reporting is vital to open markets and a free society, FiscalFusion delivers rigorous coverage across global markets, corporate finance, macroeconomic policy, enterprise technology, and sovereign affairs.
             </p>
             <p className="text-neutral-700">
-              Our newsroom operates around the clock across major global hubs, blending classic investigative traditions with contemporary data-driven research. Whether uncovering sovereign monetary policy shifts or reporting on technological disruptions, we place empirical facts above partisan commentary.
+              Our newsroom operates around the clock across major global hubs, blending classic investigative traditions with contemporary quantitative research. Whether analyzing sovereign monetary policy shifts or reporting on supply chain bottlenecks, we place empirical facts above speculative noise.
             </p>
           </section>
 
@@ -90,7 +103,7 @@ export default function AboutPage() {
               Our Editorial Promise
             </h2>
             <div className="bg-[#fbf9f4] border-l-4 border-[#c59b27] p-6 space-y-2 font-sans">
-              <h3 className="text-base font-serif font-bold text-neutral-900">Truth, Depth, and Accountability</h3>
+              <h3 className="text-base font-serif font-bold text-neutral-900">Truth, Depth, and Market Clarity</h3>
               <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed">
                 &ldquo;We serve our readership first. We verify before we publish, acknowledge corrections transparently, and maintain zero tolerance for unsourced speculation or sponsored manipulation.&rdquo;
               </p>

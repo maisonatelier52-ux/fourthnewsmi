@@ -1,18 +1,31 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { getAllArticles, SITE_URL, SITE_NAME } from '@/lib/newsData';
 
-export const metadata = {
-  title: 'Privacy Policy | Gazetta',
-  description: 'How Gazetta collects, safeguards, and respects reader data and digital privacy under GDPR and CCPA standards.',
+export const metadata: Metadata = {
+  title: 'Privacy Policy & Data Protection',
+  description: 'How FiscalFusion collects, safeguards, and respects reader data and digital privacy under GDPR and CCPA standards.',
+  alternates: {
+    canonical: '/privacy-policy',
+  },
+  openGraph: {
+    title: `Privacy Policy | ${SITE_NAME}`,
+    description: 'Our commitment to reader confidentiality, data minimization, and statutory privacy protections worldwide.',
+    url: `${SITE_URL}/privacy-policy`,
+    siteName: SITE_NAME,
+  },
 };
 
-export default function PrivacyPolicyPage() {
+export default async function PrivacyPolicyPage() {
+  const allArticles = await getAllArticles();
+
   return (
     <div className="min-h-screen bg-white text-black flex flex-col font-serif selection:bg-neutral-200 selection:text-black">
-      <Navbar articles={[]} />
+      <Navbar articles={allArticles} />
 
-      {/* Light Editorial Header - No black banner */}
+      {/* Light Editorial Header */}
       <header className="w-full bg-white text-black pt-8 sm:pt-12 pb-6 border-b border-neutral-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
           <div className="flex items-center gap-2 text-[11px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
@@ -27,7 +40,7 @@ export default function PrivacyPolicyPage() {
             Our commitment to reader confidentiality, data minimization, and statutory privacy protections worldwide.
           </p>
           <div className="pt-2 text-xs font-sans text-neutral-400">
-            Last Updated: September 2026 • Gazetta Data Governance Officer
+            Last Updated: September 2026 • FiscalFusion Data Governance Officer
           </div>
         </div>
       </header>
@@ -44,7 +57,7 @@ export default function PrivacyPolicyPage() {
               We practice intentional data minimization. We only collect details essential to delivering our editorial services:
             </p>
             <ul className="list-disc list-inside space-y-2 text-neutral-700 font-sans text-xs sm:text-sm pl-2">
-              <li><strong className="text-black font-semibold">Account &amp; Subscription Details:</strong> Your email address and membership preferences when subscribing to newsletters or premium editions.</li>
+              <li><strong className="text-black font-semibold">Account &amp; Subscription Details:</strong> Your email address and membership preferences when subscribing to daily briefings or market editions.</li>
               <li><strong className="text-black font-semibold">Technical Diagnostics:</strong> Anonymized server logs including IP address, user agent, and aggregated page performance metrics to optimize reader experience.</li>
               <li><strong className="text-black font-semibold">Reader Preferences:</strong> Bookmarked dispatches stored locally on your device storage.</li>
             </ul>
@@ -55,7 +68,7 @@ export default function PrivacyPolicyPage() {
               2. Strict Non-Monetization of Reader Information
             </h2>
             <p className="text-neutral-700">
-              Gazetta does not sell, lease, or broker your personal information to third-party marketing companies, programmatic data exchanges, or surveillance advertising networks.
+              FiscalFusion does not sell, lease, or broker your personal information to third-party marketing companies, programmatic data exchanges, or surveillance advertising networks.
             </p>
           </section>
 
@@ -73,7 +86,7 @@ export default function PrivacyPolicyPage() {
               4. Global Rights (GDPR &amp; CCPA/CPRA)
             </h2>
             <p className="text-neutral-700">
-              Regardless of your geographic location, you retain full rights to request access to, correction of, or complete erasure of any data associated with your email address. To exercise your rights, contact our privacy desk at <span className="font-sans font-semibold text-black">privacy@gazetta.com</span>.
+              Regardless of your geographic location, you retain full rights to request access to, correction of, or complete erasure of any data associated with your email address. To exercise your rights, contact our privacy desk at <span className="font-sans font-semibold text-black">privacy@fiscalfusion.org</span>.
             </p>
           </section>
 

@@ -1,6 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 
+export const SITE_URL = 'https://fiscalfusion.org';
+export const SITE_NAME = 'FiscalFusion';
+export const SITE_TAGLINE = 'Global Financial Intelligence & Economic Analysis';
+export const SITE_TITLE = 'FiscalFusion | Global Financial Intelligence & Economic Analysis';
+export const SITE_DESCRIPTION = 'Independent international journal of financial intelligence, global markets, corporate strategy, economic policy, and investigative dispatches.';
+export const PUBLISHER_NAME = 'FiscalFusion Media Group LLC';
+export const OFFICIAL_EMAIL = 'contact@fiscalfusion.org';
+
 export interface Author {
   name: string;
   role: string;
@@ -33,6 +41,30 @@ export const CATEGORIES = [
   { id: 'us', name: 'U.S. News', description: 'Domestic policy, infrastructure modernization & national enterprise shifts' },
   { id: 'world', name: 'World', description: 'Deep sea exploration, sovereign assets, climate resilience & diplomacy' },
 ];
+
+/**
+ * Converts human date strings (e.g. "September 11, 2026") into ISO 8601 strings
+ */
+export function formatIsoDate(dateStr: string): string {
+  if (!dateStr) return new Date().toISOString();
+  const parsed = Date.parse(dateStr);
+  if (!isNaN(parsed)) {
+    return new Date(parsed).toISOString();
+  }
+  return new Date().toISOString();
+}
+
+/**
+ * Converts date strings into RFC 822 format for RSS feeds
+ */
+export function formatRfc822Date(dateStr: string): string {
+  if (!dateStr) return new Date().toUTCString();
+  const parsed = Date.parse(dateStr);
+  if (!isNaN(parsed)) {
+    return new Date(parsed).toUTCString();
+  }
+  return new Date().toUTCString();
+}
 
 /**
  * Calculates estimated read time based on text word count

@@ -1,18 +1,31 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { getAllArticles, SITE_URL, SITE_NAME } from '@/lib/newsData';
 
-export const metadata = {
-  title: 'Advertising & Sponsored Policy | Gazetta',
-  description: 'Guidelines governing advertising placement, native sponsorship separation, and commercial integrity across Gazetta.',
+export const metadata: Metadata = {
+  title: 'Advertising & Sponsored Content Policy',
+  description: 'Guidelines governing advertising placement, native sponsorship separation, and commercial integrity across FiscalFusion.',
+  alternates: {
+    canonical: '/advertising-and-sponsored-policy',
+  },
+  openGraph: {
+    title: `Advertising & Sponsored Policy | ${SITE_NAME}`,
+    description: 'Ensuring unmistakable distinction between independent investigative reporting and paid commercial partnerships.',
+    url: `${SITE_URL}/advertising-and-sponsored-policy`,
+    siteName: SITE_NAME,
+  },
 };
 
-export default function AdvertisingPolicyPage() {
+export default async function AdvertisingPolicyPage() {
+  const allArticles = await getAllArticles();
+
   return (
     <div className="min-h-screen bg-white text-black flex flex-col font-serif selection:bg-neutral-200 selection:text-black">
-      <Navbar articles={[]} />
+      <Navbar articles={allArticles} />
 
-      {/* Light Editorial Header - No black banner */}
+      {/* Light Editorial Header */}
       <header className="w-full bg-white text-black pt-8 sm:pt-12 pb-6 border-b border-neutral-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
           <div className="flex items-center gap-2 text-[11px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
@@ -27,7 +40,7 @@ export default function AdvertisingPolicyPage() {
             Ensuring unmistakable distinction between independent investigative reporting and paid commercial partnerships.
           </p>
           <div className="pt-2 text-xs font-sans text-neutral-400">
-            Commercial Standards Board • Gazetta Publishing Guidelines
+            Commercial Standards Board • FiscalFusion Publishing Guidelines
           </div>
         </div>
       </header>
@@ -59,7 +72,7 @@ export default function AdvertisingPolicyPage() {
               3. Strictly Prohibited Advertising Categories
             </h2>
             <p className="text-neutral-700">
-              Gazetta maintains rigorous filters and rejects advertisements that compromise reader welfare or platform trust, including:
+              FiscalFusion maintains rigorous filters and rejects advertisements that compromise reader welfare or platform trust, including:
             </p>
             <ul className="list-disc list-inside space-y-2 text-neutral-700 font-sans text-xs sm:text-sm pl-2">
               <li>Predatory financial schemes, unregulated high-risk leverage, or deceptive crypto investments.</li>
@@ -72,7 +85,7 @@ export default function AdvertisingPolicyPage() {
           <div className="bg-[#fbf9f4] p-6 border border-neutral-200 border-l-4 border-l-[#c59b27] font-sans text-xs sm:text-sm space-y-2">
             <h4 className="font-bold text-black uppercase tracking-wider">Advertising Inquiries &amp; Rate Cards</h4>
             <p className="text-neutral-700 leading-relaxed">
-              For legitimate partnership inquiries or institutional advertising media kits, contact our commercial sales team at <span className="font-semibold text-black">advertising@gazetta.com</span>.
+              For legitimate partnership inquiries or institutional advertising media kits, contact our commercial sales team at <span className="font-semibold text-black">advertising@fiscalfusion.org</span>.
             </p>
           </div>
 

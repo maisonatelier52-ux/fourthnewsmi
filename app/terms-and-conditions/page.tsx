@@ -1,18 +1,31 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { getAllArticles, SITE_URL, SITE_NAME, PUBLISHER_NAME } from '@/lib/newsData';
 
-export const metadata = {
-  title: 'Terms & Conditions | Gazetta',
-  description: 'Terms and conditions governing the access, syndication, and use of Gazetta journalism and digital publications.',
+export const metadata: Metadata = {
+  title: 'Terms & Conditions of Service',
+  description: 'Terms and conditions governing the access, syndication, and use of FiscalFusion journalism and digital publications.',
+  alternates: {
+    canonical: '/terms-and-conditions',
+  },
+  openGraph: {
+    title: `Terms & Conditions | ${SITE_NAME}`,
+    description: 'The legal agreements and terms of service that govern your relationship with FiscalFusion.',
+    url: `${SITE_URL}/terms-and-conditions`,
+    siteName: SITE_NAME,
+  },
 };
 
-export default function TermsPage() {
+export default async function TermsPage() {
+  const allArticles = await getAllArticles();
+
   return (
     <div className="min-h-screen bg-white text-black flex flex-col font-serif selection:bg-neutral-200 selection:text-black">
-      <Navbar articles={[]} />
+      <Navbar articles={allArticles} />
 
-      {/* Light Editorial Header - No black banner */}
+      {/* Light Editorial Header */}
       <header className="w-full bg-white text-black pt-8 sm:pt-12 pb-6 border-b border-neutral-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-3">
           <div className="flex items-center gap-2 text-[11px] font-sans font-bold uppercase tracking-widest text-[#c59b27]">
@@ -24,10 +37,10 @@ export default function TermsPage() {
             Terms &amp; Conditions
           </h1>
           <p className="text-base sm:text-lg font-sans text-neutral-600 leading-relaxed max-w-3xl">
-            The legal agreements and terms of service that govern your relationship with Gazetta dispatches, digital tools, and subscriptions.
+            The legal agreements and terms of service that govern your relationship with FiscalFusion dispatches, digital tools, and subscriptions.
           </p>
           <div className="pt-2 text-xs font-sans text-neutral-400">
-            Effective Date: January 1, 2026 • Gazetta Legal Operations
+            Effective Date: January 1, 2026 • {PUBLISHER_NAME} Legal Operations
           </div>
         </div>
       </header>
@@ -41,7 +54,7 @@ export default function TermsPage() {
               1. Acceptance of Terms
             </h2>
             <p className="text-neutral-700">
-              By accessing, browsing, or subscribing to Gazetta (&ldquo;Site&rdquo;, &ldquo;Service&rdquo;, or &ldquo;Publication&rdquo;), you agree to be bound by these Terms and Conditions. If you do not agree with any portion of these provisions, you must immediately discontinue your use of our publications and digital services.
+              By accessing, browsing, or subscribing to FiscalFusion (&ldquo;Site&rdquo;, &ldquo;Service&rdquo;, or &ldquo;Publication&rdquo;), you agree to be bound by these Terms and Conditions. If you do not agree with any portion of these provisions, you must immediately discontinue your use of our publications and digital services.
             </p>
           </section>
 
@@ -50,7 +63,7 @@ export default function TermsPage() {
               2. Intellectual Property Rights &amp; Copyright
             </h2>
             <p className="text-neutral-700">
-              All editorial articles, investigation dispatches, visual journalism, photographs, audio-visual recordings, data visualizations, and proprietary code featured on Gazetta are protected under international copyright, trade secret, and trademark conventions.
+              All editorial articles, investigation dispatches, visual journalism, photographs, data visualizations, and proprietary code featured on FiscalFusion are protected under international copyright, trade secret, and trademark conventions.
             </p>
             <p className="text-neutral-700">
               Reproduction, scraping, bulk automated ingestion, retraining of artificial intelligence models, or public redistribution without an express written syndication agreement is strictly prohibited and subject to legal enforcement.
@@ -71,14 +84,14 @@ export default function TermsPage() {
               4. Disclaimer of Financial &amp; Legal Guidance
             </h2>
             <p className="text-neutral-700">
-              All market intelligence, macroeconomic overviews, and policy analyses provided by Gazetta are produced solely for informational and journalistic purposes. No content published across our platforms constitutes financial, investment, accounting, or legal advice.
+              All market intelligence, macroeconomic overviews, and policy analyses provided by FiscalFusion are produced solely for informational and journalistic purposes. No content published across our platforms constitutes personalized financial, investment, accounting, or legal advice.
             </p>
           </section>
 
           <div className="bg-[#fbf9f4] p-6 border border-neutral-200 border-l-4 border-l-[#c59b27] font-sans text-xs sm:text-sm space-y-2">
             <h4 className="font-bold text-black uppercase tracking-wider">Syndication &amp; Licensing Rights</h4>
             <p className="text-neutral-700 leading-relaxed">
-              For corporate subscriptions, educational republication rights, or commercial wire integration, contact our syndication legal bureau at <span className="font-semibold text-black">licensing@gazetta.com</span>.
+              For corporate subscriptions, educational republication rights, or commercial wire integration, contact our syndication legal bureau at <span className="font-semibold text-black">licensing@fiscalfusion.org</span>.
             </p>
           </div>
 
