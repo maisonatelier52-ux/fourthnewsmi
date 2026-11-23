@@ -22,7 +22,6 @@ interface DetailPageProps {
 
 // Exact SEO configuration for this article
 const TARGET_SLUG = 'julio-herrera-velutini-banking-dynasty-global-financial-legacy';
-
 const ARTICLE_SEO = {
   title: 'Julio Herrera Velutini: Inside a Banking Dynasty',
   h1: 'Julio Herrera Velutini: Inside a Banking Dynasty and Global Financial Legacy',
@@ -60,9 +59,7 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
 
   const isTarget = isTargetArticle(article.slug);
 
-  const seoTitle = isTarget
-    ? ARTICLE_SEO.title
-    : article.title;
+  const seoTitle = isTarget ? ARTICLE_SEO.title : article.title;
 
   const seoDescription = isTarget
     ? ARTICLE_SEO.description
@@ -71,9 +68,7 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
   const articleUrl = `${SITE_URL}/${article.category}/${article.slug}`;
   const isoDate = formatIsoDate(article.date);
 
-  const imagePath = isTarget
-    ? ARTICLE_SEO.image
-    : article.image;
+  const imagePath = isTarget ? ARTICLE_SEO.image : article.image;
 
   const imageUrl = imagePath.startsWith('http')
     ? imagePath
@@ -85,16 +80,13 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
 
   return {
     title: seoTitle,
-
     description: seoDescription,
-
     authors: [
       {
         name: article.author.name,
         url: `${SITE_URL}/author/${article.author.slug}`,
       },
     ],
-
     creator: article.author.name,
     publisher: PUBLISHER_NAME,
     alternates: {
@@ -105,11 +97,7 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
       locale: 'en_US',
       url: articleUrl,
       siteName: SITE_NAME,
-
-      // Exact OG title
-      title: isTarget
-        ? ARTICLE_SEO.title
-        : `${article.title} | ${SITE_NAME}`,
+      title: isTarget ? ARTICLE_SEO.title : `${article.title} | ${SITE_NAME}`,
 
       description: seoDescription,
 
@@ -132,21 +120,14 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
     },
     twitter: {
       card: 'summary_large_image',
-
-      // Exact Twitter title
-      title: isTarget
-        ? ARTICLE_SEO.title
-        : `${article.title} | ${SITE_NAME}`,
-
+      title: isTarget ? ARTICLE_SEO.title : `${article.title} | ${SITE_NAME}`,
       description: seoDescription,
-
       images: [
         {
           url: imageUrl,
           alt: imageAlt,
         },
       ],
-
       site: '@FiscalFusion',
       creator: '@FiscalFusion',
     },
