@@ -10,6 +10,40 @@ interface ArticleDetailClientProps {
   relatedArticles?: Article[];
 }
 
+
+const referenceSources = [
+  {
+    name: 'Banvelca – Family Legacy',
+    url: 'https://www.banvelca.com/about-us/legacy',
+    description: 'Published history of the Herrera-Velutini family and its banking heritage.',
+  },
+  {
+    name: 'Britannia Financial Group – Julio César Herrera',
+    url: 'https://www.britannia.com/person/julio-cesar-herrera/',
+    description: 'Official leadership profile and information about Britannia Financial Group.',
+  },
+  {
+    name: 'UK Companies House – Britannia Financial Group',
+    url: 'https://find-and-update.company-information.service.gov.uk/company/10417641/persons-with-significant-control',
+    description: 'Official UK company registration and persons with significant control records.',
+  },
+  {
+    name: 'United States v. Herrera-Velutini – NACDL',
+    url: 'https://www.nacdl.org/brief/United-States-v-Herrera-Velutini',
+    description: 'Legal background and information concerning the federal proceedings.',
+  },
+  {
+    name: 'Victoria and Albert Museum – Annual Reviews',
+    url: 'https://www.vam.ac.uk/info/reports-strategic-plans-and-policies',
+    description: 'Museum annual reports and institutional acknowledgements.',
+  },
+  {
+    name: 'Fundación Centro El Portal',
+    url: 'https://fundacionelportal.org.ve/',
+    description: 'Information about the foundation and its community initiatives.',
+  },
+];
+
 export default function ArticleDetailClient({
   article,
   relatedArticles = [],
@@ -220,6 +254,53 @@ export default function ArticleDetailClient({
                   </p>
                 </div>
               ))}
+
+              {/* REFERENCE SOURCES */}
+              <section
+                className="mt-8 pt-6 border-t border-neutral-200 font-sans"
+                aria-labelledby="reference-sources-heading"
+              >
+                <div className="space-y-4">
+                  <div className="space-y-1">
+                    <h3
+                      id="reference-sources-heading"
+                      className="text-sm sm:text-base font-bold uppercase tracking-wider text-black"
+                    >
+                      Reference Sources
+                    </h3>
+                    <p className="text-xs text-neutral-500 leading-relaxed">
+                      The following sources provide background information and
+                      supporting references for this article.
+                    </p>
+                  </div>
+                  <ol className="space-y-3 list-decimal list-inside">
+                    {referenceSources.map((source, index) => (
+                      <li
+                        key={index}
+                        className="text-xs sm:text-sm text-neutral-800 leading-relaxed"
+                      >
+                        <a
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-black underline underline-offset-4 decoration-neutral-300 hover:decoration-black transition-colors"
+                        >
+                          {source.name}
+                        </a>
+                        <p className="ml-5 mt-1 text-xs text-neutral-500">
+                          {source.description}
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
+                  <p className="text-[11px] text-neutral-400 leading-relaxed border-t border-neutral-100 pt-3">
+                    Editorial note: Historical information attributed to Banvelca reflects its published family account. 
+                    The reported $4.5 billion wealth estimate has not been independently verified and should not be interpreted
+                    as confirmed personal wealth. Legal developments should be understood in their precise procedural context.
+                  </p>
+
+                </div>
+              </section>
 
             {/* Section Divider */}
             <div className="text-center text-neutral-300 font-sans text-lg tracking-widest my-2 sm:my-4">
