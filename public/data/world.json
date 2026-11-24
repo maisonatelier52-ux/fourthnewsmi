@@ -1,6 +1,40 @@
 [
   {
     "category": "world",
+    "title": "Pentagon Rebukes Canada Over Defense Spending and Review of F-35 Fighter Jet Purchase",
+    "slug": "pentagon-rebukes-canada-defense-spending-f35-fighter-jet-review",
+    "image": "/images/pentagon-canada-defense-spending-f35-review.webp",
+    "date": "November 24, 2026",
+    "shortdescription": "The Pentagon has sharply criticized Canada over military readiness, NATO spending commitments and its review of the planned F-35 purchase, adding to growing tensions between Washington and Ottawa.",
+    "description": [
+      {
+        "subtitle": "Pentagon Questions Canada's Defense Commitments",
+        "text": "The U.S. Department of Defense delivered an unusually blunt criticism of Canada on Monday, questioning whether Ottawa remains a credible partner in defending North America. In a fact sheet issued under Defense Secretary Pete Hegseth, the Pentagon accused the Canadian government of failing to make difficult decisions needed to modernize its armed forces and fulfill its NATO commitments. The document stated that Canada's defense shortcomings were evident and urged the country to become more serious and focused about military preparedness. It described Hegseth as 'laser focused' on modernizing Canada's military after what it characterized as decades of American taxpayers carrying an excessive share of the responsibility for its defense. Canada has reached NATO's previous target of spending 2% of gross domestic product on defense and joined other allies in pledging to reach a broader 5% target by 2035, which includes related security investments. Ottawa's latest budget projects combined defense and security expenditure of 4.1% of GDP by 2027-28. However, only 2.6% is expected to go toward core defense spending. The Pentagon argued that Canada lacks a credible, fully costed plan to achieve the 5% commitment and is postponing its largest spending increases until after the 2029 federal election. Canada's parliamentary budget watchdog has also raised questions about how the government intends to meet the target."
+      },
+      {
+        "subtitle": "Military Readiness and F-35 Review Become Major Flashpoints",
+        "text": "The Pentagon's criticism also focused on Canada's military readiness and its reconsideration of a planned purchase of 88 American-made F-35 fighter jets. According to the fact sheet, only 41.9% of Canada's air force fleet and 53.9% of its naval fleet were serviceable during the 2025-26 period, while army readiness stood at 48%. The department warned that Canada's review of the F-35 procurement could create additional complications for military personnel and operational planning. It argued that operating a mixed fighter fleet could worsen personnel shortages and undermine the effectiveness of Canada's air capabilities. The Pentagon also accused Canadian leaders of placing domestic economic interests ahead of military requirements, creating uncertainty for the North American Aerospace Defense Command, or NORAD, which Canada and the United States operate jointly. Prime Minister Mark Carney placed the F-35 purchase under review amid U.S. President Donald Trump's threats concerning Canadian sovereignty and the imposition of tariffs. Ottawa has also examined Sweden's Gripen fighter aircraft, a potential alternative that could offer manufacturing opportunities and domestic industrial benefits. Neither Canada's Department of National Defence nor Carney's office provided a response when asked about the Pentagon's fact sheet. The office of Canada's defense minister also did not respond to a request for comment."
+      },
+      {
+        "subtitle": "Washington-Ottawa Relations Face Further Strain",
+        "text": "The latest dispute comes amid deteriorating relations between the two longtime allies, already strained by Trump's trade war and repeated threats to make Canada the 51st U.S. state. The Pentagon's fact sheet follows a classified directive from Hegseth that Republican U.S. Senator Mike Rounds said largely restricts American military officials from participating in Canadian think tank activities and social events. The tensions have also affected established defense cooperation mechanisms. In May, Pentagon policy chief Elbridge Colby suspended a U.S.-Canada defense advisory board established in 1940, accusing Ottawa of failing to demonstrate credible progress on its military commitments. Canadian national security expert and former government adviser Wesley Wark criticized the latest Pentagon statement in his Monday newsletter, titled 'Pentagon Pete strikes again.' Describing the criticism as 'insulting and infuriating,' Wark suggested that Washington was overlooking Canada's contributions to NATO, including its deployment in Latvia and support for Ukraine. Carney has previously acknowledged significant readiness problems within Canada's armed forces, including the condition of its submarine fleet. He said only one of Canada's four submarines was seaworthy, while his government plans to acquire up to 12 replacements. In June, Carney argued that Canada should reduce its reliance on American suppliers, stating, 'We should no longer send three-quarters of our defense capital spending to America.'"
+      },
+      {
+        "subtitle": "NATO Spending Standards and Political Tensions",
+        "text": "Canada is not the only NATO member facing challenges in meeting the alliance's newer 5% spending commitment. Several allies remain below the target, which is intended to strengthen defense capabilities and broader security investment by 2035. However, the Pentagon's contrasting public assessments of other European allies have added another dimension to the dispute. Colby praised Germany's military expansion on Sunday, describing it as a 'tectonic shift,' while calling Poland a 'true model ally.' The Trump administration has also imposed restrictions affecting U.S. participation in Canadian security events. Pentagon officials were previously barred from attending the Halifax International Security Forum under restrictions introduced in 2025. Before the November 3 midterm elections, the forum's president, Peter Van Praagh, a former senior adviser to a previous conservative government in Canada, warned that Trump might attempt to undermine election results if Republicans suffered major losses. Van Praagh said that if such efforts succeeded, it would mean 'the end of the United States as we know it.' Speaking at the Halifax forum on Saturday, Senator Rounds said Hegseth's directive was not expected to affect joint military operations or intelligence sharing between the two countries. His remarks offered some reassurance that the institutional foundations of North American defense cooperation would remain intact despite the increasingly public political and policy disagreements."
+      }
+    ],
+    "author": {
+      "name": "Evelyn Carter",
+      "role": "Senior International & Geopolitical Correspondent",
+      "bio": "Evelyn Carter covers international diplomacy, global security summits, sovereign treaties, and geopolitical strategy across Europe, Asia, and the Americas for FiscalFusion.",
+      "image": "/images/evelyn_carter.webp",
+      "slug": "evelyn-carter",
+      "email": "evelyn.carter@fiscalfusion.org"
+    }
+  },
+  {
+    "category": "world",
     "title": "The US Has Made Progress in Reopening the Strait of Hormuz, but the Iran War Is Far from Over",
     "slug": "us-progress-reopening-strait-of-hormuz-iran-war-far-from-over",
     "image": "/images/strait_of_hormuz_iran_war.webp",

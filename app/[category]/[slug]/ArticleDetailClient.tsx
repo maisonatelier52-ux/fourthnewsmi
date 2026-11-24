@@ -105,6 +105,11 @@ export default function ArticleDetailClient({
     }
   };
 
+  // Show reference sources only on the specified article page.
+  const showReferenceSources =
+    article.category.toLowerCase() === 'business' &&
+    article.slug === 'julio-herrera-velutini-banking-dynasty-global-financial-legacy';
+
   // Extract description array or fallback
   const descriptions = Array.isArray(article.description) ? article.description : [];
   const firstSection = descriptions[0];
@@ -255,7 +260,8 @@ export default function ArticleDetailClient({
                 </div>
               ))}
 
-              {/* REFERENCE SOURCES */}
+              {/* REFERENCE SOURCES — only for the Julio Herrera Velutini article */}
+              {showReferenceSources && (
               <section
                 className="mt-8 pt-6 border-t border-neutral-200 font-sans"
                 aria-labelledby="reference-sources-heading"
@@ -301,6 +307,7 @@ export default function ArticleDetailClient({
 
                 </div>
               </section>
+              )}
 
             {/* Section Divider */}
             <div className="text-center text-neutral-300 font-sans text-lg tracking-widest my-2 sm:my-4">
