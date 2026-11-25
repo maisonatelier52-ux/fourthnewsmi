@@ -224,6 +224,9 @@ export default function Footer() {
               <li><Link href="/finance" className="hover:text-neutral-950 transition-colors">Finance</Link></li>
               <li><Link href="/us" className="hover:text-neutral-950 transition-colors">U.S. News</Link></li>
               <li><Link href="/world" className="hover:text-neutral-950 transition-colors">World</Link></li>
+              <li><Link href="/politics" className="hover:text-neutral-950 transition-colors">Politics</Link></li>
+              <li><Link href="/sports" className="hover:text-neutral-950 transition-colors">Sports</Link></li>
+              <li><Link href="/entertainment" className="hover:text-neutral-950 transition-colors">Entertainment</Link></li>
             </ul>
           </div>
 

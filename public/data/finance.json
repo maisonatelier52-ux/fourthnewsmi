@@ -1,6 +1,48 @@
 [
   {
     "category": "finance",
+    "title": "Asian Stocks Slide as AI Sell-Off Spreads Across Markets After Wall Street Retreat",
+    "slug": "asian-stocks-decline-ai-share-selloff-wall-street-retreat",
+    "image": "/images/asian-stocks-ai-market-selloff-wall-street.webp",
+    "date": "November 25, 2026",
+    "shortdescription": "Asian markets mostly declined as renewed selling in artificial intelligence stocks weighed on technology shares, with Taiwan, South Korea and Japan recording significant losses following Wall Street's latest retreat.",
+    "description": [
+      {
+        "subtitle": "AI Stock Sell-Off Weighs on Asian Markets",
+        "text": "Asian stock markets mostly moved lower on Wednesday as renewed selling in artificial intelligence-related shares on Wall Street spread across the region, putting pressure on major technology companies and semiconductor manufacturers. U.S. stock futures also slipped, while oil prices retreated in early trading. Investor optimism surrounding Nvidia's decision to restore Jensen Huang as its chief executive officer was tempered by continuing questions about corporate governance and the influence of U.S. President Donald Trump. Taiwan experienced one of the sharpest declines, with the Taiex tumbling more than 6%. Taiwan Semiconductor Manufacturing Co., a major producer of advanced AI chips, fell 8.1%, while chip designer MediaTek plunged 10%. South Korea's Kospi dropped 5.6% to 4,725.84, as Samsung Electronics declined 9.1% and SK Hynix lost 8.6%. Japan's Nikkei 225 fell 3.6% to 56,502.97. SoftBank Group, an investor in OpenAI, slumped 16.1%, while semiconductor manufacturer Kioxia plunged 15.4%. The declines highlighted the vulnerability of Asian markets to changes in investor sentiment toward the global AI industry."
+      },
+      {
+        "subtitle": "Mixed Performance Across Hong Kong, China and Australia",
+        "text": "Not every major Asian market followed the broader downward trend. Hong Kong's Hang Seng Index gained 1% to 22,449.86, recovering some of its recent losses after closing at its lowest level in more than a year on Tuesday. Mainland China's Shanghai Composite Index moved in the opposite direction, falling 0.9% to 3,515.05. Australia's S&P/ASX 200 edged down 0.5% to 8,683.90. Australian markets also faced pressure from inflation data showing that the consumer price index rose 4.9% in October compared with a year earlier, exceeding expectations. The stronger-than-anticipated inflation figure could increase pressure on the Reserve Bank of Australia to consider raising interest rates. The possibility of tighter monetary policy adds another concern for investors already navigating uncertainty in technology valuations and global economic conditions."
+      },
+      {
+        "subtitle": "Wall Street Retreat Renews Questions About AI Valuations",
+        "text": "The declines in Asia followed another difficult session on Wall Street, where artificial intelligence-related companies dragged major indexes lower on Tuesday. The S&P 500 fell 0.5%, recording its eighth decline in nine trading sessions. The Nasdaq Composite lost 1.5%, while the Dow Jones Industrial Average advanced 0.9%. The latest losses came after a brief surge in AI-linked shares on Monday quickly faded, extending a period of weakness that began after the broader market reached an all-time high the previous month. Nvidia shares fell 5.9% on Tuesday, giving back part of the gains from the previous session, when the stock had surged 31.5% in its biggest one-day increase in more than two decades. Huang's announced return as CEO on Monday restored a prominent and influential figure to the leadership of the company at the center of the AI boom. However, the leadership development has not resolved broader questions about whether artificial intelligence can generate sufficient profits and productivity gains to justify the enormous amounts being invested in data centers, chips and supporting infrastructure."
+      },
+      {
+        "subtitle": "AI Companies Face Financing and Regulatory Uncertainty",
+        "text": "Investors are also weighing the financial and political challenges facing the artificial intelligence sector. High interest rates have made borrowing more expensive, increasing the cost of financing the infrastructure required to support the industry's expansion. Meanwhile, sweeping Democratic victories in U.S. midterm elections earlier this month have raised the possibility of stronger regulatory scrutiny of artificial intelligence. Potential policy changes could include restrictions or pauses on additional data center construction, creating uncertainty for companies planning major infrastructure investments. The pressure extended beyond Nvidia to businesses across the AI ecosystem. CoreWeave, which purchases Nvidia chips and rents computing capacity through cloud services, plunged 11.8%. GE Vernova, which supplies equipment and technology supporting power generation for AI data centers, declined 4.8%. Anthropic, the company behind the Claude AI chatbot, fell 6.5%, taking its share price below $83, the level at which it initially sold shares in its initial public offering the previous week. The stock had briefly reached $115 on its first trading day amid strong investor enthusiasm. The sharp declines demonstrated how quickly sentiment can shift across companies associated with artificial intelligence, even when their business models differ."
+      },
+      {
+        "subtitle": "Consumer Confidence and Bond Yields Offer a Mixed Economic Picture",
+        "text": "Despite the technology sell-off, much of the broader U.S. stock market performed better than the headline indexes suggested. Most stocks within the S&P 500 advanced after a report indicated that American consumer confidence was improving by more than economists had expected. The positive economic signal helped support shares outside the AI sector, although it was not enough to offset the losses among major technology companies. In the bond market, U.S. Treasury yields remained relatively stable. The yield on the 10-year Treasury note edged up to 4.93% from 4.92% late Monday after fluctuating during the session. Currency markets also recorded modest movements. The U.S. dollar rose to 159.29 Japanese yen from 159.26 yen, while the euro weakened to $1.0946 from $1.0966."
+      },
+      {
+        "subtitle": "Oil Prices Retreat After Recent Volatility",
+        "text": "Oil prices also moved lower in early Wednesday trading after a period of significant volatility. Brent crude, the international benchmark, had gained 2.4% on Tuesday to reach $88.78 per barrel but subsequently fell 1.3% to $87.67. U.S. benchmark crude declined 1.5% to $80.86 per barrel. Oil markets have experienced substantial price swings since the United States and Israel attacked Iran in February, with Brent crude fluctuating between $72 and $114 per barrel during the period. The latest movements in energy prices added to an already complicated market environment, as investors assessed geopolitical risks alongside inflation, interest rates and the outlook for global economic growth. With major Asian technology markets under pressure and questions surrounding the profitability of AI investments still unresolved, investors remain sensitive to developments that could influence corporate earnings, financing conditions and the direction of global markets."
+      }
+    ],
+    "author": {
+      "name": "Claire Donovan",
+      "role": "Chief Financial Markets & Monetary Policy Analyst",
+      "bio": "Claire Donovan specializes in central bank liquidity, sovereign bond yields, currency reserves, and global capital market dynamics for FiscalFusion.",
+      "image": "/images/claire_donovan.webp",
+      "slug": "claire-donovan",
+      "email": "claire.donovan@fiscalfusion.org"
+    }
+  },
+  {
+    "category": "finance",
     "title": "US Futures Up, Oil Prices Down Ahead of One of the More Crucial Reads on Inflation in Years",
     "slug": "us-futures-up-oil-prices-down-crucial-inflation-read-finance",
     "image": "/images/finance_us_futures_oil_inflation_read.webp",

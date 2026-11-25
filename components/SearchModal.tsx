@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Search, X, ArrowRight, Sparkles, Clock, Tag } from 'lucide-react';
 import { Article } from '@/lib/newsData';
@@ -42,7 +42,7 @@ export default function SearchModal({ isOpen, onClose, articles }: SearchModalPr
     return match && (selectedCategory === 'all' || a.category === selectedCategory);
   });
 
-  const categories = ['all', 'world', 'business', 'finance', 'us'];
+  const categories = ['all', 'world', 'business', 'finance', 'us', 'politics', 'sports', 'entertainment'];
   const catLabel = (c: string) =>
     c === 'all' ? 'All' : c === 'us' ? 'U.S. News' : c.charAt(0).toUpperCase() + c.slice(1);
 

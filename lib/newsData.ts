@@ -40,6 +40,9 @@ export const CATEGORIES = [
   { id: 'finance', name: 'Finance', description: 'Capital markets, monetary policy, digital assets & sovereign wealth' },
   { id: 'us', name: 'U.S. News', description: 'Domestic policy, infrastructure modernization & national enterprise shifts' },
   { id: 'world', name: 'World', description: 'Deep sea exploration, sovereign assets, climate resilience & diplomacy' },
+  { id: 'politics', name: 'Politics', description: 'Political analysis, policy shifts, and governance insights' },
+  { id: 'sports', name: 'Sports', description: 'Sports news, events, and analysis' },
+  { id: 'entertainment', name: 'Entertainment', description: 'Entertainment industry news, celebrity updates, and cultural insights' }
 ];
 
 /**
@@ -106,7 +109,7 @@ export async function getArticlesByCategory(category: string): Promise<Article[]
  * Load all articles across all categories
  */
 export async function getAllArticles(): Promise<Article[]> {
-  const categoryKeys = ['business', 'finance', 'us', 'world'];
+  const categoryKeys = ['business', 'finance', 'us', 'world', 'politics', 'sports', 'entertainment'];
   const allArticlesArrays = await Promise.all(categoryKeys.map(cat => getArticlesByCategory(cat)));
   return allArticlesArrays.flat();
 }

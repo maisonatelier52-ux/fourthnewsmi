@@ -70,6 +70,9 @@ export default function Navbar({ articles = [] }: NavbarProps) {
     { href: '/business', label: 'BUSINESS' },
     { href: '/finance', label: 'FINANCE' },
     { href: '/us', label: 'U.S. NEWS' },
+    { href: '/politics', label: 'POLITICS' },
+    { href: '/sports', label: 'SPORTS' },
+    { href: '/entertainment', label: 'ENTERTAINMENT' },
   ];
 
   // Get the first article from each category: world, business, finance, us
