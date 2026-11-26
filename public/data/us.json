@@ -1,6 +1,44 @@
 [
   {
     "category": "us",
+    "title": "Judge Blocks FCC From Early ABC License Review, Citing Potential First Amendment Retaliation",
+    "slug": "judge-blocks-fcc-early-abc-license-review-first-amendment",
+    "image": "/images/judge-blocks-fcc-abc-broadcast-license-review.webp",
+    "date": "November 26, 2026",
+    "shortdescription": "A federal judge has blocked the FCC from accelerating ABC's broadcast license review, finding that the network is likely to succeed in its claim that the Trump administration's actions infringed on its First Amendment rights.",
+    "description": [
+      {
+        "subtitle": "Federal Judge Grants ABC Legal Protection",
+        "text": "A federal judge in Washington, D.C., has blocked the Federal Communications Commission from conducting an early review of ABC's broadcast licenses, siding with the network's argument that the Trump administration's actions have created a chilling effect on its freedom of speech. U.S. District Judge Loren AliKhan on Wednesday granted ABC's request for a temporary restraining order and a preliminary injunction on First Amendment grounds. The network had argued that the FCC was retaliating against it because of programming and editorial decisions that displeased the administration. In her ruling, AliKhan concluded that ABC was likely to succeed on its constitutional claim, emphasizing the strength of the allegations. 'This is not a close case,' she wrote. The judge, who was nominated by former President Joe Biden, said ABC had presented details of what it described as 'a campaign of retaliation against them in response to their exercise of their First Amendment rights.' She characterized the alleged conduct as an irreparable injury, supporting the network's request for immediate judicial protection."
+      },
+      {
+        "subtitle": "Dispute Began With Accelerated License Renewal Proceedings",
+        "text": "The legal dispute stems from an FCC decision requiring eight ABC-owned television stations to submit applications to renew their broadcast licenses years ahead of their scheduled deadlines. FCC Commissioner Brendan Carr ordered the early review in April, several months after ABC late-night host Jimmy Kimmel made a joke that angered President Donald Trump, who publicly called for Kimmel to be fired. ABC and its parent company, The Walt Disney Company, filed a lawsuit against the FCC and Carr in August, arguing that the accelerated proceedings represented an improper use of regulatory authority to punish the network for its editorial decisions. ABC asked the court to temporarily prevent the commission from taking further action connected to the license renewal process. The judge agreed to block the early review, granting the network significant protection while the underlying lawsuit proceeds."
+      },
+      {
+        "subtitle": "Court Rejects Broader Request Against Future FCC Actions",
+        "text": "Although the judge granted ABC's request to halt the accelerated license proceedings, she declined to approve a broader part of the network's application. ABC had also asked the court to prohibit the FCC from taking 'any actions, formal or informal,' that could coerce the network or threaten sanctions in an effort to influence its editorial discretion. AliKhan rejected that additional request, explaining that ABC had not identified specific future threats beyond the early license renewal proceedings already under review. The distinction means the court's immediate order is focused on the accelerated licensing process rather than creating a blanket restriction on all potential FCC investigations or regulatory actions involving the network."
+      },
+      {
+        "subtitle": "ABC and FCC Respond to the Ruling",
+        "text": "ABC welcomed the decision, describing it as an important victory for constitutional protections. 'Today's decision is an important victory for the First Amendment,' an ABC News spokesperson said in a statement. The FCC strongly disagreed with the ruling and indicated that it would continue defending its actions in court. An agency spokesperson said the portion of the decision granting ABC's motion was 'wrong on the facts and wrong on the law,' adding that the commission looked forward to prevailing in full in the case. Government attorneys had previously urged the court to dismiss ABC's lawsuit, arguing that the network was attempting to prevent legitimate regulatory scrutiny before it could take place. In their court filing, Justice Department lawyers warned that preventing the commission from using its available investigative powers could seriously harm both the government and the public by limiting its ability to determine whether broadcasters were complying with their legal and regulatory responsibilities."
+      },
+      {
+        "subtitle": "Broader Conflict Over Media Independence and Government Authority",
+        "text": "The dispute is part of a wider series of legal and political confrontations between the Trump administration and news organizations over coverage, editorial independence and access to the executive branch. Since Trump returned to the White House nearly two years ago, several media outlets, including The Associated Press, have been involved in disputes with the administration concerning their reporting and access. ABC has also challenged Carr's efforts to subject its morning talk show, 'The View,' to equal-time requirements. Carr has defended the commission's approach by arguing that broadcasters have a responsibility to 'operate in the public interest.' The case raises broader questions about the limits of federal regulatory authority and the constitutional protections afforded to broadcasters when government officials object to their programming. The plaintiffs include American Broadcasting Companies, Inc., its indirect parent company, The Walt Disney Company, and eight television stations indirectly owned by ABC. The court's decision does not resolve the entire lawsuit, but it prevents the FCC from proceeding with the accelerated license review while the legal challenge continues."
+      }
+    ],
+    "author": {
+      "name": "Miles Harrington",
+      "role": "National Affairs & Federal Policy Correspondent",
+      "bio": "Miles Harrington covers Capitol Hill, federal regulatory agencies, constitutional law, and nationwide infrastructure modernization for FiscalFusion.",
+      "image": "/images/miles_harrington.webp",
+      "slug": "miles-harrington",
+      "email": "miles.harrington@fiscalfusion.org"
+    }
+  },
+  {
+    "category": "us",
     "title": "Trial Remains Elusive for Purported Mastermind Accused of Plotting 9/11 Attacks",
     "slug": "trial-remains-elusive-911-mastermind-khalid-sheikh-mohammed",
     "image": "/images/trial_911_mastermind_elusive.webp",
