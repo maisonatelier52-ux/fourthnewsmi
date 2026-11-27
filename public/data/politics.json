@@ -1,6 +1,44 @@
 [
   {
     "category": "politics",
+    "title": "Trump Calls Pre-Election GDP Figures 'Fake' and Demands Investigation Into Commerce Department",
+    "slug": "trump-calls-pre-election-gdp-figures-fake-demands-commerce-department-investigation",
+    "image": "/images/trump-commerce-department-gdp-data-investigation.webp",
+    "date": "November 27, 2026",
+    "shortdescription": "President Donald Trump has accused the Commerce Department of deliberately misreporting economic growth figures before the midterm elections and called for an investigation, despite routine revisions to government economic data.",
+    "description": [
+      {
+        "subtitle": "Trump Questions Revised Economic Growth Figures",
+        "text": "President Donald Trump on Thursday accused his own administration's Commerce Department of deliberately publishing inaccurate economic growth figures ahead of the November 3 midterm elections and demanded an immediate investigation into the agency's reporting process. The dispute centers on economic data released Wednesday, when the Commerce Department revised U.S. gross domestic product growth for the third quarter to an annualized rate of 4.3%, up from an earlier estimate of 3.4%. Trump argued that the updated figure demonstrated that the original pre-election numbers were deliberately misleading. In a social media post, he described the earlier figures as a 'massive, and purposeful, error' and connected their release to Republican losses in the midterm elections, which resulted in Democrats gaining control of both chambers of Congress. 'It was just revealed that the REAL Numbers on the Economy, published before the Election, were FAKE, and a correction was issued yesterday by the people in the Government Agency that does these numbers,' Trump wrote. He questioned why the revised figure had not been released before voters went to the polls and called for an immediate investigation. The Commerce Department did not immediately respond to a request for comment. Much of the federal government was closed Thursday in observance of the Thanksgiving holiday."
+      },
+      {
+        "subtitle": "Routine Data Revisions Become Political Dispute",
+        "text": "The president's accusations have drawn attention to the established process through which federal agencies update economic statistics. The Commerce Department's Bureau of Economic Analysis regularly revises GDP estimates as additional information becomes available, allowing economists and policymakers to work with more complete data. Similar scheduled revisions apply to monthly employment reports and other major economic indicators. These updates are generally published according to predetermined schedules rather than political events or election calendars. The latest revision therefore reflects the routine process of refining economic estimates, although Trump has questioned whether the timing and accuracy of the figures were politically motivated. His demand for an investigation comes amid repeated criticism of federal economic statistics that do not align with his public descriptions of the U.S. economy. The controversy has raised concerns about the potential consequences of political attacks on government data, which businesses, investors, financial institutions and consumers rely on when making decisions about hiring, spending, lending and investment."
+      },
+      {
+        "subtitle": "Previous Clash Over Employment Statistics",
+        "text": "Trump's latest allegations follow an earlier confrontation involving the federal government's economic reporting agencies. In August 2025, the president dismissed the head of the Bureau of Labor Statistics after a weaker-than-expected employment report showed that the U.S. economy added only 73,000 jobs in July 2025. The same report revised employment figures for May and June downward by a combined 258,000 jobs compared with previously reported estimates. Trump described the employment figures as 'phony' and 'rigged,' challenging the credibility of the statistics after their release. The episode prompted renewed attention to the independence of federal statistical agencies and the importance of maintaining confidence in economic measurements. The latest dispute over GDP data has revived similar questions about whether political criticism could weaken public trust in official statistics, particularly when revisions produce results that conflict with the administration's preferred economic narrative."
+      },
+      {
+        "subtitle": "Voters Express Concerns About Economic Conditions",
+        "text": "Trump has repeatedly claimed that his administration deserves credit for stronger economic growth, but polling conducted during the midterm elections indicated that many voters remained dissatisfied with the state of the economy. According to the AP Voter Poll, an extensive survey of the electorate, 76% of voters described economic conditions as either 'not so good' or 'poor.' Approximately two-thirds also said Trump's own policies had contributed to inflation. The findings highlighted a gap between the president's public assessment of economic performance and the economic concerns expressed by voters. The results also provided important political context for the Republican losses in the November 3 elections, although they do not establish that any particular economic statistic or government data release determined voter behavior."
+      },
+      {
+        "subtitle": "Inflation Data Adds Another Dimension to Economic Debate",
+        "text": "Trump's criticism of the revised GDP figures also came as the Bureau of Economic Analysis released updated information on inflation. The same agency reported Wednesday that the personal consumption expenditures price index, a closely watched measure of inflation, accelerated to an annual rate of 3.8% in October. The increase presents a more complicated picture of the U.S. economy, combining stronger reported economic growth with continued price pressures. The president's social media post focused on the revised GDP figures but did not address the latest acceleration in the PCE price index. Economists and financial markets closely monitor both indicators because economic growth and inflation influence expectations for interest rates, consumer spending and business investment. The dispute underscores the importance of interpreting economic statistics across multiple measures rather than relying on a single headline figure. As Trump calls for an investigation into the Commerce Department's reporting, the controversy places renewed attention on the transparency, independence and credibility of the federal government's economic data."
+      }
+    ],
+    "author": {
+      "name": "Jonathan Mercer",
+      "role": "Political Correspondent",
+      "bio": "Jonathan covers U.S. politics and policy with sharp, accessible reporting. He breaks down political developments so readers understand what they mean in real life.",
+      "image": "/images/jonathan_mercer.webp",
+      "slug": "jonathan-mercer",
+      "email": "jonathanmercer@fiscalfusion.org"
+    }
+  },
+  {
+    "category": "politics",
     "title": "Trump, Xi and Putin to Hold Historic Three-Way Meeting at APEC Summit in China",
     "slug": "trump-xi-putin-historic-three-way-meeting-apec-summit",
     "image": "/images/trump-xi-putin-three-way-apec-summit-2026.webp",
